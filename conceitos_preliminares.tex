@@ -1,0 +1,469 @@
+\chapter{Conceitos Preliminares}
+
+\section{Variedades suaves}
+
+\begin{defi}
+Um subconjunto $M \subset \mathbb{R}^3$ é chamado de \emph{superfície regular} se para qualquer $p \in M$ existe um aberto $V$ de $\mathbb{R}^3$ e uma aplicação $\varphi: U \rightarrow M \cap V$, onde $U$ e um aberto de $\mathbb{R}^2$, tal que
+\begin{enumerate}
+    \item $\varphi$ é um homeomorfismo
+    \item $\varphi$ é diferenciável e sua diferencial $d\varphi(x): \mathbb{R}^2 \rightarrow \mathbb{R}^3$ é injetora para todo $x \in U$
+\end{enumerate}
+\end{defi}
+
+Gráfico
+
+\begin{exemplo}
+Seja $f: U \subset \mathbb{R}^2 \rightarrow \mathbb{R}$ uma função diferenciável. Denote por $M$ seu gráfico
+\begin{equation*}
+    M = \text{Graf}(f) = \{ (x,f(x)): x \in U \}
+\end{equation*}
+
+Neste caso $M$ admite uma parametrização global. Defina $\varphi: U \rightarrow M$ pondo
+\begin{equation*}
+    \varphi(x) = (x,f(x)), x \in U
+\end{equation*}
+\end{exemplo}
+
+\begin{defi}
+Seja $\phi: V \subset \mathbb{R}^m \rightarrow \mathbb{R}^n$ uma aplicação diferenciável. Um ponto $p \in V$ é chamado de \emph{ponto crítico} de $\phi$ se $d\phi(p)$ não é sobrejetora. Um ponto $q \in \mathbb{R}^n$ é chamado de \emph{valor crítico} de $\phi$ se existe algum ponto crítico de $\phi$ em $\phi^{-1}(q)$. Um ponto $q \in \mathbb{R}^n$ que não é valor crítico é chamado \emph{valor regular} para $\phi$.
+\end{defi}
+
+\begin{obs}
+Quando $n=1$, um ponto $p \in V$ é ponto crítico de $\phi$ se e somente se $d\phi(p)=0$.
+\end{obs}
+
+\begin{teo}\label{preimagem_de_um_valor_regular}
+Sejam $f: \mathbb{R}^3 \rightarrow \mathbb{R}$ uma função diferenciável e $c \in \mathbb{R}$ um valor regular para $f$. Então, o subconjunto
+\begin{equation*}
+    M = f^{-1}(c) \text{ é superfície regular.}
+\end{equation*}
+\end{teo}
+
+\begin{proof}
+:)
+\end{proof}
+
+\begin{exemplo}
+Seja $f: \mathbb{R}^3 \rightarrow \mathbb{R}$ dada por $f(x) = \langle x,x \rangle$. Temos que $f$ é diferenciável e vale
+\begin{equation*}
+    df(p)v = 2 \langle p,v \rangle
+\end{equation*}
+
+para qualquer $p \in \mathbb{R}^3$ e para qualquer $v \in \mathbb{R}^3$. Disso decorre que $0 \in \mathbb{R}^3$ é o único ponto crítico de $f$. Note que
+\begin{equation*}
+    f(0) = 0 \neq 1.
+\end{equation*}
+
+Disso decorre, pelo teorema \ref{preimagem_de_um_valor_regular}, que a esfera $S^2 = f^{-1}(1)$ é uma superfície regular em $\mathbb{R}^3$.
+\end{exemplo}
+
+\begin{exemplo}
+Seja $S^2 \subset \mathbb{R}^3$ a esfera unitária. Denote por $N$ seu polo norte, $N = (0,0,1)$
+
+Gráfico
+
+Denote por $\pi_N$ a aplicação que associa a cada ponto $x \in S^2 \setminus \{N\}$ o ponto $\pi_N(x)$ no plano $x_3 = 0$, obtido pela interseção da semirreta que inicia no ponto $N$ e passa pelo ponto $x$ como o plano $x_3 = 0$. Os pontos da semirreta são da forma
+\begin{equation*}
+    N + t(x - N), t \geq 0.
+\end{equation*}
+
+Assim, a semirreta intercepta o plano $x_3 = 0$ quando
+\begin{equation*}
+    1 + t(x_3 - 1) = 0,
+\end{equation*}
+
+ou seja
+\begin{equation*}
+    t = \frac{1}{1 - x_3}
+\end{equation*}
+
+onde $x = (x_1, x_2, x_3)$. Por tanto
+\begin{equation*}
+    \pi_N(x) = \frac{1}{1-x_3} (x_1, x_2, 0)
+\end{equation*}
+
+Portanto $\pi_N$ é diferenciável. Por outro lado, a aplicação $\varphi: \mathbb{R}^2 \rightarrow S^2 \setminus \{N\}$ dada por
+\begin{equation*}
+	\varphi(x) = \left( \frac{2x_1}{\|x\|^2 + 1}, \frac{2x_2}{\|x\|^2 +1}, \frac{\|x\|^2 -1}{\|x\|^2 +1} \right)
+\end{equation*} 
+
+é diferenciável e vale $\pi_N \circ \varphi = \text{Id}$, ou seja, $\pi_N$ é um difeomorfismo.
+
+Analogamente, podemos considerar $\pi_S$, onde $S=(0,0,-1)$.
+\end{exemplo}
+
+\begin{defi}
+	Seja $M$ um conjunto. Uma \emph{carta local} em $M$ é uma bijeção $\varphi: U \rightarrow \varphi(U)$, onde $U$ é um subconjunto de $M$ e $\varphi(U)$ é um aberto de algum espaço euclideano $\mathbb{R}^n$.
+\end{defi}
+
+\begin{defi}
+	Duas cartas locais em $M$, $(U, \varphi)$ e $(V, \psi)$, são \emph{compatíveis} se $U \cap V = \emptyset$ ou, se $U \cap V \neq \emptyset$, então $\varphi(U \cap V)$ e $\psi(U \cap V)$ sao abertos de $\mathbb{R}^n$ e a aplicação de transição $\psi \circ \varphi^{-1}$ é um difeomorfismo $C^{\infty}$.
+\end{defi}
+
+\begin{defi}
+	Um \emph{atlas} $\mathcal{A}$ de dimensão $n$ em $M$ é um conjunto de cartas locais em $M$
+	\begin{equation*}
+		\mathcal{A} = \{ (U_{\alpha}, \varphi_{\alpha}):  \alpha \in I \}
+	\end{equation*}
+	
+	onde cada $\varphi_{\alpha}(U_{\alpha})$ é aberto em $\mathbb{R}^n$ e $I$ é um conjunto de índices, duas a duas compatíveis e
+	\begin{equation*}
+		M = \bigcup_{\alpha \in I} U_{\alpha}
+	\end{equation*}
+\end{defi}
+
+\begin{exemplo}
+	Um atlas no espaco euclideano $\mathbb{R}^n$ é dado por
+	\begin{equation*}
+		\mathcal{A} = \{ (\mathbb{R}^n, \text{Id}) \}
+	\end{equation*}
+\end{exemplo}
+
+\begin{exemplo}
+	Na esfera $S^2$, um atlas é o conjunto
+	\begin{equation*}
+		\mathcal{A} = \{ (S^2 \setminus \{N\}, \pi_N), (S^2 \setminus \{S\}, \pi_S) \}
+	\end{equation*}
+	
+	onde $\pi_N, \pi_S$ denotam as projeções estereográficas de $S^2$ relativas aos polos norte e sul respectivamente.
+\end{exemplo}
+
+\begin{defi}
+	Uma carta local $\varphi$ em $M$ é dita \emph{compativel} com um atlas $\mathcal{A}$ em $M$ se $\varphi$ for compativel com todos os elementos do atlas $\mathcal{A}$.
+\end{defi}
+
+\begin{lema}
+	Seja $\mathcal{A}$ um atlas em $M$. Se $(U, \varphi)$ e $(V, \psi)$ sao duas cartas locais em $M$, ambas compatíveis com $\mathcal{A}$, então $\varphi$ e $\psi$ são compatíveis.
+\end{lema}
+
+\begin{defi}
+	Um atlas $\mathcal{A}$ em $M$ é dito \emph{maximal} se nao está propriamente contido em nenhum atlas de $M$.
+\end{defi}
+
+\begin{lema}
+	Dado um atlas $\mathcal{A}$ em $M$, existe um único atlas maximal $\mathcal{A}_{\text{max}}$ em $M$, com $\mathcal{A} \subset \mathcal{A_{\text{max}}}$.
+\end{lema}
+
+\begin{lema}
+	Dado um atlas $\mathcal{A} = \{ (U_{\alpha}, \varphi_{\alpha}): \alpha \in I \}$ em $M$, existe uma única topologia $\tau_{\mathcal{A}}$ em $M$ que torna cada $U_{\alpha}$ aberto em $M$ e cada carta $\varphi_{\alpha}$ um homeomorfismo, i.e., $\tau_{\mathcal{A}}$ é a \emph{topologia induzida pelo atlas $\mathcal{A}$}.
+\end{lema}
+
+\begin{defi}
+	Uma \emph{variedade suave} de dimensão $n$ é um par $(M, \mathcal{A})$, onde $M$ é um conjunto e $\mathcal{A}$ é um atlas maximal de dimensão $n$ e classe $C^{\infty}$ em $M$ tal que a topologia induzida $\tau_{\mathcal{A}}$ seja de Hausdorff e satisfaça o segundo axioma da enumerabilidades.
+\end{defi}
+
+Gráfico
+
+Sejam $M^2$ uma superfície, $p \in M^2$ e $(U, \varphi)$ carta local em $M^2$, $p \in U$. Como $\varphi(U)$ é aberto de $\mathbb{R}^2$, podemos expressar $\varphi$ como
+\begin{equation*}
+	\phi(p) = (x(p), y(p)), \forall p \in U
+\end{equation*}
+
+As funções $x(p), y(p$ são chamadas \emph{funções coordenadas} de $\varphi$ em $\mathbb{R}^2$.
+
+\begin{nota}
+	Para dizer que $\varphi$ está definido pelas funcoes coordenas $x$ e $y$ vamos escrever $\varphi \sim  (x,y)$.
+\end{nota}
+
+\begin{defi}
+	O \emph{plano tangente} a $M$ num ponto $p \in M$ é o espaço vetorial real (abstrato) de dimensão 2 cuja base natural é
+	\begin{equation*}
+		\left\{ \frac{\partial}{\partial x} (p), \frac{\partial}{\partial y} (p) \right\}
+	\end{equation*}
+	
+	onde $\frac{\partial}{\partial x}, \frac{\partial}{\partial y}$ são derivadas parciais de $\varphi$ em relação às coordenadas usuais de $\mathbb{R}^2$, i.e.
+	\begin{align*}
+		\frac{\partial}{\partial x} (p) = d \varphi^{-1} ( \varphi(p) ) e_1\\
+		\frac{\partial}{\partial y} (p) = d \varphi^{-1} ( \varphi(p) ) e_2
+	\end{align*}
+	
+	onde $\{ e_1,e_2 \}$ é a base canônica de $\mathbb{R}^2$. Além disso, identificando os vetoes $\frac{\partial}{\partial x} (p), \frac{\partial}{\partial y} (p)$ como derivações temos
+	\begin{align*}
+		\frac{\partial}{\partial x} (p) (f) = \frac{\partial}{\partial x} \left( f \circ \varphi^{-1} \right) (\varphi(p))\\
+		\frac{\partial}{\partial y} (p) (f) = \frac{\partial}{\partial y} \left( f \circ \varphi^{-1} \right) (\varphi(p))
+	\end{align*}
+	
+	onde $f: M \rightarrow \mathbb{R}$ é uma função diferenciável.
+\end{defi}
+
+\begin{obse}
+	Denote por $T_p M^*$ o espaço dual a $T_p M$, chamado o espaço cotangente a $M$ em $p$. O conjunto $T_p M^*$ também é um espaço vetorial cuja base é $\{ dx(p), dy(p)  \}$ dual à base $\{ \frac{\partial}{\partial x}(p), \frac{\partial}{\partial y}(p) \}$.
+\end{obse}
+
+\begin{lembrete}
+	Se $E$ é um espaço vetorial real de dimensão $n$ com base $\{ e_1, e_2, \ldots, e_n \}$ sua base dual $\{ f_1, f_2, \ldots, f_n \} \subset E^*$ satisfaz
+	\begin{equation*}
+		f_i (e_j) = \delta_{ij}, 1 \leq i,j \leq n
+	\end{equation*}
+\end{lembrete}
+
+	O conjunto
+	\begin{equation*}
+		TM = \bigcup_{p \in M} T_p M
+	\end{equation*}
+	
+	dado pela união disjunta dos planos tangentes a $M$, é chamado de \emph{fibrado tangente} a $M$, admite uma estrutura de variedades suave de dimensão 4.
+	
+	
+\section{Formas diferenciáveis e orientação}
+
+\begin{defi}
+	Uma 1-forma $\omega$ em $M$ é uma aplicação diferenciável que a cada $p \in M$ associa um funcional linear $\omega(p): T_p M \rightarrow \mathbb{R}$.
+\end{defi}
+
+\begin{defi}
+	Uma 2-forma $\omega$ em $M$ é uma aplicação diferenciável que associa a cada $p \in M$ uma 2-forma linear $\omega(p): T_p M \times T_p M \rightarrow \mathbb{R}$ alternada (antissimétrica)
+	\begin{equation*}
+		\omega(p) (v,w) = - \omega(p) (w,v) 
+	\end{equation*}
+\end{defi}
+
+\begin{exemplo}
+	Analisando $\mathbb{R}^2$ como variedade suave vemos que $T_p \mathbb{R}^2 \cong \mathbb{R}^2$. Além disso, o determinante
+	\begin{align*}
+		\text{det}: \mathbb{R}^2 \times \mathbb{R}^2 &\rightarrow \mathbb{R}\\
+		(v,w) & \mapsto \det \left( \begin{matrix}
+		v_1 & w_1\\
+		v_2 & w_2
+		\end{matrix} \right)
+	\end{align*}
+	
+	é uma 2-forma.
+\end{exemplo}
+
+\begin{nota}
+	\begin{align*}
+		C^{\infty} &= \{ f: M \rightarrow \mathbb{R}: f \text{ é diferenciável} \}\\
+		\mathfrak{X}(M) &= \{ X: M \rightarrow TM: X \text{ é um campo vetorial} \}\\
+		\mathfrak{X}(M)^* &= \text{1-formas}
+	\end{align*}
+\end{nota}
+
+\begin{defi}
+	Seja $E$ um espaco vetorial com $v,w \in E$ e $f,g \in E^*$. O produto simetrico $\wedge$ está definido por
+	\begin{align*}
+		(f \wedge g) (v,w) &= f(v) g(w) - f(w) g(v)\\
+		&= \text{Area}(v,w)
+	\end{align*}
+\end{defi}
+
+\begin{defi}
+	Uma superfície $M$ é dita \emph{orientável} se existe uma 2-forma $\omega$ em $M$ tal que $\omega(p) \neq 0$ para todo $p \in M$. Fixado uma tal 2-forma $\omega$, dizemos que o par $(M, \omega)$ é uma \emph{superfície orientada}.	
+\end{defi}
+
+A existência de uma 2-forma $\omega$ em $M$, com $\omega(p) \neq 0$ para todo $p \in M$, permite-nos decidir se a base $\{ \frac{\partial}{\partial x}(p), \frac{\partial}{\partial y}(p) \}$ do plano tangente $T_p M$, com $p \in U$, é positiva ou negativa (na orientação de $M$). Ou seja, escreva
+\begin{equation*}
+	\omega(p) = h(p) dx(p) \wedge dy(p)
+\end{equation*}
+
+onde $h \in C^{\infty}(U)$. Como $\omega$ não se anula, logo $h$ tem sinal constante em $U$.
+
+Dizemos que:
+\begin{itemize}
+	\item $(U, \varphi)$ é \emph{orientada positiva} se $h >0$.
+	\item $(U, \varphi)$ é \emph{orientada negativa} se $h<0$.
+\end{itemize}
+
+\begin{prop}
+	Uma superfície $M$ é orientável se y somente se é possível escolher um atlas $\mathcal{A}$ em $M$ tal que o Jacobiano (o determinante da matriz jacobiana) de qualquer mudança de coordenadas é positiva.
+\end{prop}
+
+\begin{proof}
+	contenidos...
+\end{proof}
+
+\section{Campos vetoriais}
+
+\begin{defi}
+	Seja $M^n$ uma variedade suave. Um \emph{campo vetorial} é uma aplicação diferenciável $X: M \rightarrow TM$ tal que $\pi \circ X = \text{Id}_M$.
+	
+	diagrama
+	
+	onde $\pi: TM \rightarrow M$ denota a projeção canônica
+	\begin{equation*}
+		\pi(p,v) = p
+	\end{equation*}
+\end{defi}
+
+\begin{obse}
+	A igualdade $\pi \circ X = \text{Id}_M$ significa que $X(p) \in T_p M$ para todo $p \in M$.
+\end{obse}
+
+\begin{nota}
+	O conjunto dos campos vetoriais $X: M \rightarrow TM$ é denotado por $\mathfrak{X}(M)$.
+\end{nota}
+
+\begin{obse}
+	Com as operações naturais
+	\begin{align*}
+		(X+Y)(p) &= X(p) + Y(p)\\
+		(cX)(p) &= c X(p)
+	\end{align*}
+	
+	onde $c \in \mathbb{R}$, o conjunto $\mathfrak{X}(M)$ torna-se um espaço vetorial real.
+\end{obse}
+
+\begin{obse}
+	Dados $X \in \mathfrak{X}(M)$ e uma carta local $(U, \varphi$ em $M$, podemos escrever
+	\begin{align*}
+		X(p) = \sum_{i=1}^n a_i (p) \frac{\partial}{\partial x_i} (p), \forall p \in U
+	\end{align*}
+	
+	onde $a_1, \ldots, a_n: U \rightarrow \mathbb{R}$ são funções e $\{ \frac{\partial}{\partial x_1}(p), \ldots, \frac{\partial}{\partial x_n}(p) \}$ é a base de $T_p M$ associada a $\varphi$, i.e.
+	\begin{equation*}
+		\frac{\partial}{\partial x_i} (p) = (d \varphi)^{-1}(\varphi(p)).e_i
+	\end{equation*}
+	
+	onde $\{ e_1, \ldots, e_n \}$ é a base canônica de $\mathbb{R}^n$.
+\end{obse}
+
+Ver que $X \in \mathfrak{X}(M$ é diferenciável se e somente se os $a_1, \ldots, a_n$ são diferenciáveis em U.
+
+\section{Variedades Riemannianas}
+
+\begin{defi}
+	Uma \emph{métrica Riemanniana} em uma variedade suave $M^n$ é uma correspondência $\langle , \rangle$ que associa a cada ponto $p \in M$, um produto interno $\langle , \rangle_p$ em $T_p M$ e que varia diferenciavelmente no sentido de que a função
+	\begin{equation*}
+		p \in M \mapsto \langle X(p), Y(p) \rangle_p
+	\end{equation*}
+	
+	seja diferenciável para qualquer $X,Y \in \mathfrak{X}(M)$.
+\end{defi}
+
+\begin{defi}
+	Uma \emph{variedade Riemanniana} é um par $(M, \langle , \rangle)$.
+\end{defi}
+
+\begin{obse}
+	Dado uma carta local $(U, \varphi)$ em $M$ com $\varphi \sim (x_1, \ldots, x_n)$. Denote por
+	\begin{equation*}
+		dx_1, \ldots, dx_n
+	\end{equation*}
+	
+	as 1-formas duais aos campos coordenados $\frac{\partial}{\partial x_1}, \ldots, \frac{\partial}{\partial x_n}$, ou seja,
+	\begin{equation*}
+		dx_i (p): T_p M \rightarrow \mathbb{R}
+	\end{equation*}
+	
+	é o funcional linear dado por
+	\begin{equation*}
+		dx_i (p) \frac{\partial}{\partial x_j} = \delta_{ij}
+	\end{equation*}
+	
+	onde $\delta_{ij} = 1$ quando $i=j$ e $\delta_{ij} = 0$ quando $i \neq j$. 
+	
+	Dados $p \in U$ e $v,w \in T_p M$, escrevamos
+	\begin{align*}
+		v &= \sum_{i=1}^n v_i \frac{\partial}{\partial x_i}(p) \text{ e }\\
+		w &= \sum_{i=1}^n w_i \frac{\partial}{\partial x_i}(p)
+	\end{align*}
+	
+	Usando a bilinearidade da métrica obtemos
+	\begin{align*}
+		\langle v,w \rangle_p &= \left\langle \sum_{i=1}^n v_i \frac{\partial}{\partial x_i}(p), \sum_{i=1}^n w_i \frac{\partial}{\partial x_i}(p) \right\rangle_p\\
+		&= \sum_{i,j = 1}^n v_i w_j \left\langle \frac{\partial}{\partial x_i}(p), \frac{\partial}{\partial x_j}(p) \right\rangle_p\\
+		&= \sum_{i,j=1}^n v_i w_j g_{ij}(p)
+	\end{align*}
+	
+	onde $g_{ij}(p) = \left\langle \frac{\partial}{\partial x_i}(p), \frac{\partial}{\partial x_j}(p) \right\rangle_p$.
+	
+	Como $g_{ij} = g_{ji}$ e
+	\begin{align*}
+		dx_i (p) v &= dx_i (p) \left( \sum_{j=1}^n v_j \frac{\partial}{\partial x_j}(p) \right)\\
+		&= v_i
+	\end{align*}
+	
+	e
+	\begin{equation*}
+		dx_i (p) w = w_i
+	\end{equation*}
+	
+	podemos escrever
+	\begin{align*}
+		\langle , \rangle &= \sum_{i,j=1}^n g_{ij} dx_i \otimes dx_j\\
+		&= \sum_{i \leq j, i=1}^n \tilde{g}_{ij} dx_i dx_j
+	\end{align*}
+	
+	onde $\tilde{g}_{ii} = g_{ii} $ e $\tilde{g}_{ij} = 2g_{ij}$ se $i \neq j$.
+\end{obse}
+
+\begin{exemplo}
+	Em $\mathbb{R}^n$, identificamos
+	\begin{equation*}
+		\frac{\partial}{\partial x_i} (p) = e_i
+	\end{equation*}
+	
+	com $1 \leq i \leq n$ para qualquer $p \in \mathbb{R}^n$. Assim, a métrica $\langle , \rangle$ em $\mathbb{R}^n$ é dada por
+	\begin{align*}
+		\left\langle \frac{\partial}{\partial x_i}(p), \frac{\partial}{\partial x_j}(p) \right\rangle_p &= \langle e_i, e_j \rangle_p\\
+		&= \langle e_i, e_j \rangle\\
+		&= \delta_{ij}
+	\end{align*}
+	
+	ou seja
+	\begin{align*}
+		\langle , \rangle &= dx_1 dx_1 + \ldots + dx_n dx_n \\
+		&= dx_1^2 + \ldots + dx_n^2
+	\end{align*}
+\end{exemplo}
+
+
+\begin{exemplo}
+	A métrica euclideana em $\mathbb{R}^2$ é dada por
+	\begin{equation*}
+		\langle , \rangle = dx^2 + dy^2
+	\end{equation*}
+	
+	Passando para coordenadas polares
+	\begin{align*}
+		x &= r \cos \theta\\
+		y &= r \sin \theta
+	\end{align*}
+	
+	obtemos
+	\begin{align*}
+		dx &= \cos \theta dr - r \sin \theta d\theta\\
+		dy &= \sin \theta dr + r \cos \theta d\theta
+	\end{align*}
+	
+	Assim,
+	\begin{align*}
+		\langle , \rangle &= dx^2 + dy^2\\
+		&= dr^2 + r^2 d\theta^2
+	\end{align*}
+\end{exemplo}
+
+\begin{exemplo}
+	Considere a superfície de rotação $M^2$ em $\mathbb{R}^3$ parametrizada por
+	\begin{equation*}
+		\varphi(s,\theta) = (a(s) \cos \theta, a(s) \sin \theta, b(s))
+	\end{equation*}
+	
+	onde $a,b$ são funções diferenciáveis definidas em um intervalo aberto de $\mathbb{R}$, com $a>0$ e $\gamma(s) = (a(s),0,b(s))$ é a curva geratriz de $M^2$, com $\| \gamma'(s) \|^2 = (a'(s))^2 + (b'(s))^2 = 1$.
+	
+	Considere $M^2$ munida da métrica riemanniana $\langle , \rangle$ induzida de $\mathbb{R}^3$, i.e., cada plano tangente $T_p M$ está munido do produto interno usual de $\mathbb{R}^3$. Tais planos sao gerados pelas derivadas parciais
+	\begin{align*}
+		\frac{\partial \varphi}{\partial s} &= \varphi_s = (a'(s) \cos \theta, a'(s) \sin \theta, b'(s))\\
+		\frac{\partial \varphi}{\partial \theta} &= \varphi_{\theta} = (-a(s) \sin \theta, a(s) \cos \theta, 0)
+	\end{align*}
+	
+	Assim,
+	\begin{align*}
+		\langle , \rangle &= \langle \varphi_s, \varphi_s \rangle ds^2 + 2 \langle \varphi_s, \varphi_{\theta} \rangle ds d\theta + \langle \varphi_{\theta}, \varphi_{\theta} \rangle d\theta^2\\
+		&= ds^2 + a(s)^2 d\theta^2
+	\end{align*}
+\end{exemplo}
+
+\begin{exemplo}
+	Seja $f: M \rightarrow N$ uma imersão, i.e., $f$ é uma aplicação diferenciável tal que
+	\begin{equation*}
+		df(p): T_p M \rightarrow T_{f(p)} N
+	\end{equation*}
+	
+	é injetiva para qualquer $p \in M$. Suponha que $N$ esteja munida de uma métrica Riemanniana $\langle , \rangle^N$. Podemos definir uma métrica $\langle , \rangle^M$ em $M$
+	\begin{equation*}
+		\langle v,w \rangle_p^M := \langle df(p) v, df(p) w \rangle_{f(p)}^N
+	\end{equation*}
+	
+	Neste caso, dizemos que $f$ é uma \emph{imersão isométrica}.
+\end{exemplo}
