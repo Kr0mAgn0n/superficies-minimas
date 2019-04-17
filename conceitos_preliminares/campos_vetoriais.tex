@@ -1,0 +1,46 @@
+\section{Campos vetoriais}
+
+\begin{defi}
+	Seja $M^n$ uma variedade suave. Um \emph{campo vetorial} é uma aplicação diferenciável $X: M \rightarrow TM$ tal que $\pi \circ X = \text{Id}_M$.
+	
+	diagrama
+	
+	onde $\pi: TM \rightarrow M$ denota a projeção canônica
+	\begin{equation*}
+		\pi(p,v) = p
+	\end{equation*}
+\end{defi}
+
+\begin{obse}
+	A igualdade $\pi \circ X = \text{Id}_M$ significa que $X(p) \in T_p M$ para todo $p \in M$.
+\end{obse}
+
+\begin{nota}
+	O conjunto dos campos vetoriais $X: M \rightarrow TM$ é denotado por $\mathfrak{X}(M)$.
+\end{nota}
+
+\begin{obse}
+	Com as operações naturais
+	\begin{align*}
+		(X+Y)(p) &= X(p) + Y(p)\\
+		(cX)(p) &= c X(p)
+	\end{align*}
+	
+	onde $c \in \mathbb{R}$, o conjunto $\mathfrak{X}(M)$ torna-se um espaço vetorial real.
+\end{obse}
+
+\begin{obse}
+	Dados $X \in \mathfrak{X}(M)$ e uma carta local $(U, \varphi$ em $M$, podemos escrever
+	\begin{align*}
+		X(p) = \sum_{i=1}^n a_i (p) \frac{\partial}{\partial x_i} (p), \forall p \in U
+	\end{align*}
+	
+	onde $a_1, \ldots, a_n: U \rightarrow \mathbb{R}$ são funções e $\{ \frac{\partial}{\partial x_1}(p), \ldots, \frac{\partial}{\partial x_n}(p) \}$ é a base de $T_p M$ associada a $\varphi$, i.e.
+	\begin{equation*}
+		\frac{\partial}{\partial x_i} (p) = (d \varphi)^{-1}(\varphi(p)).e_i
+	\end{equation*}
+	
+	onde $\{ e_1, \ldots, e_n \}$ é a base canônica de $\mathbb{R}^n$.
+\end{obse}
+
+Ver que $X \in \mathfrak{X}(M$ é diferenciável se e somente se os $a_1, \ldots, a_n$ são diferenciáveis em U.
