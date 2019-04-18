@@ -1,14 +1,46 @@
 \section{Variedades suaves}
 
 \begin{defi}
-Um subconjunto $M \subset \mathbb{R}^3$ é chamado de \emph{superfície regular} se para qualquer $p \in M$ existe um aberto $V$ de $\mathbb{R}^3$ e uma aplicação $\varphi: U \rightarrow M \cap V$, onde $U$ e um aberto de $\mathbb{R}^2$, tal que
+Um subconjunto $M \subset \mathbb{R}^3$ é chamado de \emph{superfície regular} se para qualquer $p \in M$ existe um aberto $V$ de $\mathbb{R}^3$ e uma aplicação $\varphi: U \rightarrow M \cap V$ chamada de \emph{parametrização}, onde $U$ e um aberto de $\mathbb{R}^2$, tal que
 \begin{enumerate}
     \item $\varphi$ é um homeomorfismo
     \item $\varphi$ é diferenciável e sua diferencial $d\varphi(x): \mathbb{R}^2 \rightarrow \mathbb{R}^3$ é injetora para todo $x \in U$
 \end{enumerate}
 \end{defi}
 
-Gráfico
+\begin{figure}
+	\centering
+	
+	\begin{tikzpicture}
+	\draw (0,0) .. controls (3/4,9/4) .. (3,3);
+	\draw (3,0) .. controls (4,9/4) .. (7,3);
+	\draw (0,0) .. controls (1.5,0.5) .. (3,0);
+	\draw (3,3) .. controls (5,3.5) .. (7,3);
+	
+	\draw (2.5,1.5) ellipse (20pt and 10pt);
+	
+	\draw[->] (0,-5) -- (7,-5);
+	\draw[->] (1,-6) -- (1,-1);
+	
+	\draw (4,-3) ellipse (50pt and 30pt);
+	
+	\draw[<-] (3,1.5) parabola (4,-2);
+	
+	\fill (2.5,1.5) circle (1pt);
+	
+	\draw (2.5,2.5) node [anchor=north] {$M \cap V$};
+	\draw (5,-1.5) node [anchor=north] {$U$};
+	\draw (4.5,0) node [anchor=east] {$\varphi$};
+	\draw (0,-1) node [anchor=west] {$\mathbb{R}^2$};
+	\draw (2.5,1.5) node [anchor=east] {$p$};
+	\draw (7,3) node [anchor=west] {$M$};
+	\end{tikzpicture}
+	\caption{Parametrização de uma superfície}
+\end{figure}
+
+\begin{obse}
+	Quando $U = \mathbb{R}^2$, $\varphi$ se chama de \emph{parametrização global}.
+\end{obse}
 
 \begin{exemplo}
 Seja $f: U \subset \mathbb{R}^2 \rightarrow \mathbb{R}$ uma função diferenciável. Denote por $M$ seu gráfico
@@ -26,9 +58,9 @@ Neste caso $M$ admite uma parametrização global. Defina $\varphi: U \rightarro
 Seja $\phi: V \subset \mathbb{R}^m \rightarrow \mathbb{R}^n$ uma aplicação diferenciável. Um ponto $p \in V$ é chamado de \emph{ponto crítico} de $\phi$ se $d\phi(p)$ não é sobrejetora. Um ponto $q \in \mathbb{R}^n$ é chamado de \emph{valor crítico} de $\phi$ se existe algum ponto crítico de $\phi$ em $\phi^{-1}(q)$. Um ponto $q \in \mathbb{R}^n$ que não é valor crítico é chamado \emph{valor regular} para $\phi$.
 \end{defi}
 
-\begin{obs}
+\begin{obse}
 Quando $n=1$, um ponto $p \in V$ é ponto crítico de $\phi$ se e somente se $d\phi(p)=0$.
-\end{obs}
+\end{obse}
 
 \begin{teo}\label{preimagem_de_um_valor_regular}
 Sejam $f: \mathbb{R}^3 \rightarrow \mathbb{R}$ uma função diferenciável e $c \in \mathbb{R}$ um valor regular para $f$. Então, o subconjunto
@@ -38,7 +70,9 @@ Sejam $f: \mathbb{R}^3 \rightarrow \mathbb{R}$ uma função diferenciável e $c 
 \end{teo}
 
 \begin{proof}
-:)
+Seja $p \in M$ tal que $p=(x_0,y_0,z_0)$, então $df(p) \neq 0$. Sem perdida de generalidade podemos dizer que $f_z(p) \neq 0$. Pelo Teorema da Função Implícita \cite[p.~296]{lima1985} \cite[p.~36]{montiel2009}, existem $U$ aberto de $\mathbb{R}^2$ tal que $(x_0,y_0) \in U$, $V$ aberto de $\mathbb{R}$ tal que $z_0 \in V$ e uma função diferenciável $g: U \rightarrow V$ tal que $g(x_0,y_0)=z_0$ e $f(x,y,g(x,y)) = c$ para todo $(x,y) \in U$.
+
+Definamos $\varphi: U \rightarrow U \times V$ tal que $\varphi(x,y) = (x,y,g(x,y))$. Se ve que $\varphi$ é uma parametrização, portanto $M$ é uma superfície.
 \end{proof}
 
 \begin{exemplo}
