@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="projecao_estereografica.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="237.5"
+     inkscape:cy="800"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.55062741;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:0.5506274, 1.1012548;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+       id="rect4558"
+       width="119.15868"
+       height="42.374523"
+       x="146.37085"
+       y="146.32367"
+       transform="matrix(1,0,-0.71566793,0.6984407,0,0)" />
+    <circle
+       style="fill:#000000;stroke:#000000;stroke-width:0.37599998;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;fill-opacity:1"
+       id="path4543"
+       cx="89.5"
+       cy="47"
+       r="1.3117921" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:0.26458332,0.52916663;stroke-dashoffset:0"
+       d="M 89.958332,47.233334 C 105.30417,78.71875 105.30417,78.71875 105.30417,78.71875"
+       id="path4963"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 105.30417,78.71875 c 21.96041,43.92083 21.96041,43.92083 21.96041,43.92083"
+       id="path4965"
+       inkscape:connector-curvature="0" />
+    <circle
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.37599999;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path4543-4"
+       cx="105.56875"
+       cy="79.512505"
+       r="1.3117921" />
+    <circle
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.37599999;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path4543-9"
+       cx="126.73542"
+       cy="121.58125"
+       r="1.3117921" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="137.31874"
+       y="111.52708"
+       id="text4996"><tspan
+         sodipodi:role="line"
+         id="tspan4994"
+         x="137.31874"
+         y="121.18257"
+         style="stroke-width:0.26458332" /></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Capa 2">
+    <ellipse
+       id="path3713"
+       cx="88"
+       cy="82"
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.264;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-opacity:0;opacity:1;"
+       rx="34.867996"
+       ry="34.868" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26300002;stroke-miterlimit:4;stroke-dasharray:0.26300002, 0.52600004000000000;stroke-opacity:1;stroke-dashoffset:0"
+       d="M 87.999999,72.13138 A 34.868688,9.8687116 0 0 0 53.13138,81.999997 34.868688,9.8687116 0 0 0 87.999999,91.86862 34.868688,9.8687116 0 0 0 122.86862,81.999997 34.868688,9.8687116 0 0 0 87.999999,72.13138 Z"
+       id="path4528"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>
