@@ -11,30 +11,31 @@ Um subconjunto $M \subset \mathbb{R}^3$ é chamado de \emph{superfície regular}
 \begin{figure}
 	\centering
 	
-	\begin{tikzpicture}
-	\draw (0,0) .. controls (3/4,9/4) .. (3,3);
-	\draw (3,0) .. controls (4,9/4) .. (7,3);
-	\draw (0,0) .. controls (1.5,0.5) .. (3,0);
-	\draw (3,3) .. controls (5,3.5) .. (7,3);
-	
-	\draw (2.5,1.5) ellipse (20pt and 10pt);
-	
-	\draw[->] (0,-5) -- (7,-5);
-	\draw[->] (1,-6) -- (1,-1);
-	
-	\draw (4,-3) ellipse (50pt and 30pt);
-	
-	\draw[<-] (3,1.5) parabola (4,-2);
-	
-	\fill (2.5,1.5) circle (1pt);
-	
-	\draw (2.5,2.5) node [anchor=north] {$M \cap V$};
-	\draw (5,-1.5) node [anchor=north] {$U$};
-	\draw (4.5,0) node [anchor=east] {$\varphi$};
-	\draw (0,-1) node [anchor=west] {$\mathbb{R}^2$};
-	\draw (2.5,1.5) node [anchor=east] {$p$};
-	\draw (7,3) node [anchor=west] {$M$};
-	\end{tikzpicture}
+%	\begin{tikzpicture}
+%	\draw (0,0) .. controls (3/4,9/4) .. (3,3);
+%	\draw (3,0) .. controls (4,9/4) .. (7,3);
+%	\draw (0,0) .. controls (1.5,0.5) .. (3,0);
+%	\draw (3,3) .. controls (5,3.5) .. (7,3);
+%	
+%	\draw (2.5,1.5) ellipse (20pt and 10pt);
+%	
+%	\draw[->] (0,-5) -- (7,-5);
+%	\draw[->] (1,-6) -- (1,-1);
+%	
+%	\draw (4,-3) ellipse (50pt and 30pt);
+%	
+%	\draw[<-] (3,1.5) parabola (4,-2);
+%	
+%	\fill (2.5,1.5) circle (1pt);
+%	
+%	\draw (2.5,2.5) node [anchor=north] {$M \cap V$};
+%	\draw (5,-1.5) node [anchor=north] {$U$};
+%	\draw (4.5,0) node [anchor=east] {$\varphi$};
+%	\draw (0,-1) node [anchor=west] {$\mathbb{R}^2$};
+%	\draw (2.5,1.5) node [anchor=east] {$p$};
+%	\draw (7,3) node [anchor=west] {$M$};
+%	\end{tikzpicture}
+	\includegraphics[scale=0.5]{graficos/parametrizacao.eps}
 	\caption{Parametrização de uma superfície}
 \end{figure}
 
@@ -187,14 +188,18 @@ Analogamente, podemos considerar $\pi_S$, onde $S=(0,0,-1)$.
 	Uma \emph{variedade suave} de dimensão $n$ é um par $(M, \mathcal{A})$, onde $M$ é um conjunto e $\mathcal{A}$ é um atlas maximal de dimensão $n$ e classe $C^{\infty}$ em $M$ tal que a topologia induzida $\tau_{\mathcal{A}}$ seja de Hausdorff e satisfaça o segundo axioma da enumerabilidades.
 \end{defi}
 
-Gráfico
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.5]{graficos/cartas_compativeis.eps}
+	\caption{Descrição gráfica de cartas compatíveis}
+\end{figure}
 
 Sejam $M^2$ uma superfície, $p \in M^2$ e $(U, \varphi)$ carta local em $M^2$, $p \in U$. Como $\varphi(U)$ é aberto de $\mathbb{R}^2$, podemos expressar $\varphi$ como
 \begin{equation*}
-	\phi(p) = (x(p), y(p)), \forall p \in U
+	\varphi(p) = (x(p), y(p)), \forall p \in U
 \end{equation*}
 
-As funções $x(p), y(p$ são chamadas \emph{funções coordenadas} de $\varphi$ em $\mathbb{R}^2$.
+As funções $x(p), y(p)$ são chamadas \emph{funções coordenadas} de $\varphi$ em $\mathbb{R}^2$.
 
 \begin{nota}
 	Para dizer que $\varphi$ está definido pelas funcoes coordenas $x$ e $y$ vamos escrever $\varphi \sim  (x,y)$.
@@ -212,7 +217,7 @@ As funções $x(p), y(p$ são chamadas \emph{funções coordenadas} de $\varphi$
 		\frac{\partial}{\partial y} (p) = d \varphi^{-1} ( \varphi(p) ) e_2
 	\end{align*}
 	
-	onde $\{ e_1,e_2 \}$ é a base canônica de $\mathbb{R}^2$. Além disso, identificando os vetoes $\frac{\partial}{\partial x} (p), \frac{\partial}{\partial y} (p)$ como derivações temos
+	onde $\{ e_1,e_2 \}$ é a base canônica de $\mathbb{R}^2$. Além disso, identificando os vetores $\frac{\partial}{\partial x} (p), \frac{\partial}{\partial y} (p)$ como derivações temos
 	\begin{align*}
 		\frac{\partial}{\partial x} (p) (f) = \frac{\partial}{\partial x} \left( f \circ \varphi^{-1} \right) (\varphi(p))\\
 		\frac{\partial}{\partial y} (p) (f) = \frac{\partial}{\partial y} \left( f \circ \varphi^{-1} \right) (\varphi(p))

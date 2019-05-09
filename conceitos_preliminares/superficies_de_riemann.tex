@@ -1,0 +1,222 @@
+\section{Superfícies de Rienmann}
+
+\begin{defi}
+	Uma superfície Riemanniana é um par $(M, \langle, \rangle)$, onde $M$ é uma variedade suave de dimensão 2 e $\langle, \rangle$ é uma métrica Riemanniana em $M$.
+\end{defi}
+
+Isso significa que $\langle,\rangle$ é um $(2,0)-$tensor simétrico e positivo definido. Ou seja, para qualquer $p \in M$, $\langle,\rangle_p: T_pM \times T_pM \rightarrow \mathbb{R}$ é um produto interno positivo definido em $T_pM$.
+
+Dada uma carta local $(U,\varphi)$ em $M$, para cada $p \in M$, podemos expressar a métrica $\langle,\rangle$ como:
+\begin{align*}
+	\langle,\rangle_p &= E dx \otimes dx + F (dx \otimes dy + dy \otimes dx) + G dy \otimes dy
+\end{align*}
+
+onde $E,F,G \in C^{\infty}(U)$. De forma simplificada
+\begin{equation*}
+	\langle,\rangle = E dx^2 + 2F dx dy + G dy^2
+\end{equation*}
+
+Lembre que, dado uma superfície Riemanniana $(M,\langle,\rangle)$, existe uma única conexão afim $\nabla$ em $M$, a conexão de Levi-Civita de $M$, que satisfaz:
+\begin{enumerate}
+	\item $\nabla$ é compatível com $\langle,\rangle$:
+	\begin{equation}\label{conexao_prop_derivada}
+		X \langle Y,Z \rangle = \langle \nabla_X Y, Z \rangle + \langle Y, \nabla_X Z \rangle
+	\end{equation}
+	
+	\item $\nabla$ é simétrica:
+	\begin{equation*}
+		\nabla_X Y - \nabla_Y X = [X,Y]
+	\end{equation*}
+	
+	onde $[,]$ é o \emph{colchete de Lie} em $\mathfrak{X}(M)$.
+\end{enumerate}
+
+Dada uma carta local $(U,\varphi)$ em $M$, com $\varphi \cong (x,y)$, temos os campos coordenados $\frac{\partial}{\partial x}, \frac{\partial}{\partial y}$ dados por
+\begin{align*}
+	\frac{\partial}{\partial x}(p) &= d \varphi^{-1}(p) e_1\\
+	\frac{\partial}{\partial y}(p) &= d \varphi^{-1}(p) e_2
+\end{align*}
+
+onde $\{e_1,e_2\}$ é a base canônica de $\mathbb{R}^2$.
+
+Considere os símbolos de Christoffel $\Gamma_{ij}^k \in C^{\infty}(U)$ da conexão Levi-Civita $\nabla$ de $M$, associada a $\langle.\rangle$, dados por
+\begin{equation}
+	\begin{split}
+		\nabla_{\frac{\partial}{\partial x}} \frac{\partial}{\partial x} &= \Gamma_{11}^1 \frac{\partial}{\partial x} + \Gamma_{11}^2 \frac{\partial}{\partial y}\\\label{christoffel}
+		\nabla_{\frac{\partial}{\partial x}} \frac{\partial}{\partial y} &= \Gamma_{12}^1 \frac{\partial}{\partial x} + \Gamma_{11}^2 \frac{\partial}{\partial y}\\
+		\nabla_{\frac{\partial}{\partial y}} \frac{\partial}{\partial y} &= \Gamma_{22}^1 \frac{\partial}{\partial x} + \Gamma_{2}^2 \frac{\partial}{\partial y}
+	\end{split}	
+\end{equation}
+
+\begin{prop}
+	Os símbolos de Christoffel são dados por:
+	\begin{align*}
+		\Gamma_{11}^1 &= \frac{1}{2(EG-F^2)} (GE_x - 2FF_x + FE_y)\\
+		\Gamma_{11}^2 &= -\frac{1}{2(EG-F^2)} (EE_y - 2EF_x + FE_x)\\
+		\Gamma_{12}^1 &= \frac{1}{2(EG-F^2)} (GE_y - FG_x)\\
+		\Gamma_{12}^2 &= \frac{1}{2(EG-F^2)} (EG_x - FE_y)\\
+		\Gamma_{22}^1 &= \frac{1}{2(EG-F^2)} (GG_x - 2GF_y + FG_y)\\
+		\Gamma_{22}^2 &= \frac{1}{2(EG-F^2)} (EG_y - 2FF_y + FG_x)
+	\end{align*}
+\end{prop}
+
+\begin{proof}
+	Usando \eqref{christoffel}, temos
+	\begin{align*}
+		\left\langle \nabla_{\frac{\partial}{\partial x}} \frac{\partial}{\partial y}, \frac{\partial}{\partial x} \right\rangle &= \Gamma_{12}^1 E + \Gamma_{12}^2 F\\
+		\left\langle \nabla_{\frac{\partial}{\partial x}} \frac{\partial}{\partial y}, \frac{\partial}{\partial y} \right\rangle &= \Gamma_{12}^1 F + \Gamma_{12}^2 G
+	\end{align*}
+	
+	Por outro lado, como $\left[ \frac{\partial}{\partial x}, \frac{\partial}{\partial y} \right] = 0$, e usando \eqref{conexao_prop_derivada}, temos
+	\begin{align*}
+		\left\langle \nabla_{\frac{\partial}{\partial x}} \frac{\partial}{\partial y}, \frac{\partial}{\partial x} \right\rangle &= \left\langle \nabla_{\frac{\partial}{\partial y}} \frac{\partial}{\partial x}, \frac{\partial}{\partial x} \right\rangle\\
+		&= \frac{1}{2}	\pdiff{y} \innerproduct{\pdiff{x}}{\pdiff{x}}\\
+		&= \frac{1}{2} E_y\\
+		\innerproduct{\conection{\pdiff{x}}{\pdiff{y}}}{\pdiff{y}} &= \frac{1}{2} \pdiff{x} \innerproduct{\pdiff{y}}{\pdiff{y}}\\
+		&= \frac{1}{2} G_x
+	\end{align*}
+	
+	Temos assim o seguinte sistema
+	\begin{align*}
+		\christoffel{12}{1} E + \christoffel{12}{2} F &= \frac{1}{2} E_y\\
+		\christoffel{12}{1} F + \christoffel{12}{2} G &= \frac{1}{2} G_x
+	\end{align*}
+	
+	ou seja,
+	\begin{equation*}
+		\left( \begin{matrix}
+		E & F\\
+		F & G
+		\end{matrix} \right) \left( \begin{matrix}
+		\christoffel{12}{1}\\
+		\christoffel{22}{2}
+		\end{matrix} \right) = \frac{1}{2} \left( \begin{matrix}
+		E_y\\
+		G_x
+		\end{matrix} \right)
+	\end{equation*}
+	
+	Resolvendo tal sistema $(EG-F^2 > 0)$, obtemos expressões para $\christoffel{12}{1}$ e $\christoffel{12}{2}$.
+\end{proof}
+
+\begin{defi}
+	O \emph{tensor de curvatura} de uma superfície Riemanniana $M$ é a aplicação
+	\begin{equation*}
+		\mathcal{R}: \vectorfields{M} \times \vectorfields{M} \times \vectorfields{M} \rightarrow \vectorfields{M}
+	\end{equation*}
+	
+	dada por
+	\begin{equation*}
+		\mathcal{R}(X,Y) Z = \conection{X}{\conection{Y}{Z}} - \conection{Y}{\conection{X}{Z}} - \conection{\liebrackets{X}{Y}}{Z}
+	\end{equation*}
+	
+	para qualquer $X,Y,Z \in \vectorfields{M}$.
+\end{defi}
+
+\begin{prop}
+	Valem as seguintes propriedades:
+	\begin{enumerate}[i)]
+		\item $\mathcal{R}$ é um tensor, i.e., $\mathcal{R} \in \smoothfunction{M}$ e é linear em $X,Y,Z$.
+		\item $\mathcal{R}$ é antissimétrico em $X,Y$, i,e., $\mathcal{R}(X,Y) = -\mathcal{R}(Y,X)$.
+		\item $\innerproduct{\mathcal{R}(X,Y),Z}{W} = -\innerproduct{\curvaturetensor{Z}{W}{X}}{Y}$.
+		\item $\curvaturetensor{X}{Y}{Z} + \curvaturetensor{Y}{Z}{X} + \curvaturetensor{Z}{X}{Y} = 0$ (Primeira identidade de Bianchi).
+	\end{enumerate}
+\end{prop}
+
+\begin{defi}
+	Seja $(M,\innerproduct{}{})$ uma superficial Riemanniana com tensor de curvatura $\mathcal{R}$.
+	
+	A \emph{curvatura Gaussiana} (ou curvatura intrínseca) $K$ de $M$, associada a $\innerproduct{}{}$ é definida por:
+	\begin{equation*}
+		K(p) = \frac{\innerproduct{\curvaturetensor{X}{Y}{Y}}{X}}{\norm{X \wedge Y}^2}
+	\end{equation*}
+	
+	onde $p \in M$, $X,Y \in T_pM$ são vetores linearmente independentes e
+	\begin{equation*}
+		\norm{X \wedge Y}= \sqrt{\norm{X}^2 \norm{Y}^2 - \innerproduct{X}{Y}^2}
+	\end{equation*}
+\end{defi}
+
+\begin{prop}
+	O valor de $K(p)$ não depende da escolha de $X,Y$.
+\end{prop}
+
+\begin{proof}
+	contenidos...
+\end{proof}
+
+
+\begin{obse}
+	O tensor de curvatura $\mathcal{R}$ é completamente determinado por $K$, pois
+	\begin{align*}
+		\curvaturetensor{X}{Y}{Z} &= K(X \wedge Y) Z\\
+		&= K(\innerproduct{Y}{Z} X - \innerproduct{X}{Z} Y)
+	\end{align*}
+	
+	para qualquer $X,Y,Z \in \vectorfields{M}$.
+\end{obse}
+
+\begin{obse}
+	Dado uma carta local $(U,\varphi)$ em $M$, com $\varphi \cong (x,y)$, existe uma relação entre os símbolos de Christoffel e o tensor de curvatura $\mathcal{R}$ associado a $\varphi$.
+	
+	Como $\liebrackets{\pdiff{x}}{\pdiff{y}} = 0$, e usando \eqref{christoffel}. temos:
+	\begin{equation*}
+%		\begin{split}
+			\curvaturetensor{\pdiff{x}}{\pdiff{y}}{\pdiff{y}} = \conection{\pdiff{x}}{\conection{\pdiff{y}}{\pdiff{y}}} - \conection{\pdiff{y}}{\conection{\pdiff{x}}{\pdiff{y}}}\\
+%			=& \conection{\pdiff{x}}{\christoffel{22}{1} \pdiff{x} + \christoffel{22}{2} \pdiff{y}} - \conection{\pdiff{y}}{\christoffel{12}{1} \pdiff{x} + \christoffel{12}{2} \pdiff{y}}\\
+%			=& \left( \partialdiff{\christoffel{12}{1}}{x} - \partialdiff{\christoffel{12}{1}}{y} \right) \pdiff{x} + \left( \partialdiff{\christoffel{22}{2}}{x} - \partialdiff{\christoffel{12}{2}}{y} \right) \pdiff{y}\\
+%			& + \christoffel{22}{1} \conection{\pdiff{x}}{\pdiff{x}} + \christoffel{22}{2} \conection{\pdiff{x}}{\pdiff{y}}\\
+%			& - \christoffel{12}{1} \conection{\pdiff{y}}{\pdiff{x}} - \christoffel{12}{2} \conection{\pdiff{y}}{\pdiff{y}}
+%		\end{split}	
+	\end{equation*}
+	
+	Usando \eqref{christoffel} temos que:
+	\begin{multline*}
+		%\begin{split}
+			\curvaturetensor{\pdiff{x}}{\pdiff{y}}{\pdiff{y}} =\\
+			 \left( \partialdiff{\christoffel{12}{1}}{x} - \partialdiff{\christoffel{12}{1}}{y} +\christoffel{22}{1} \christoffel{11}{1} + \christoffel{22}{2} \christoffel{12}{2} - \christoffel{12}{1} \christoffel{12}{1} - \christoffel{12}{2} \christoffel{22}{1} \right) \pdiff{x} \\
+			 + \left( \partialdiff{\christoffel{22}{2}}{x} - \partialdiff{\christoffel{12}{2}}{y} + \christoffel{22}{1} \christoffel{11}{2} - \christoffel{12}{1} \christoffel{12}{1} \right) \pdiff{y}
+		%\end{split}	
+	\end{multline*}
+	
+	Agora tomando o produto interno com $\pdiff{x}$:
+	\begin{multline*}
+		K =\\
+		\frac{E}{EG-F^2} \left( \partialdiff{\christoffel{12}{1}}{x} - \partialdiff{\christoffel{12}{1}}{y} +\christoffel{22}{1} \christoffel{11}{1} + \christoffel{22}{2} \christoffel{12}{2} - \christoffel{12}{1} \christoffel{12}{1} - \christoffel{12}{2} \christoffel{22}{1} \right) \\
+		+ \frac{F}{EG-F^2} \left( \partialdiff{\christoffel{22}{2}}{x} - \partialdiff{\christoffel{12}{2}}{y} + \christoffel{22}{1} \christoffel{11}{2} - \christoffel{12}{1} \christoffel{12}{1} \right)
+	\end{multline*}
+\end{obse}
+
+\begin{obse}
+	O plano $\realnumbers^2$ pode ser identificado com $\complexnumbers$ através do isomorfismo
+	\begin{equation*}
+		(x,y) \in \realnumbers^2 \mapsto x + iy \in \complexnumbers
+	\end{equation*}
+	
+	Uma função $f: U \rightarrow \complexnumbers$, definida num aberto $U \subset \complexnumbers$, é dita $\complexnumbers-$diferenciável em $z_0 \in U$ se existe o limite
+	\begin{equation*}
+		f'(z_0) = \lim_{z \rightarrow z_0} \frac{f(z) - f(z_0)}{z - z_0}
+	\end{equation*}
+	
+	Se $f$ é $\complexnumbers-$diferenciável em todo $z \in U$ dizemos que $f$ é holomorfa.
+\end{obse}
+
+\begin{defi}
+	Uma superfície conexa $M$ é chamada \emph{superfície de Riemann} se existe um atlas de cartas locais $\mathcal{A} = \{ (U_i,\varphi_i): i \in I \}$ de $M$ tal que $\varphi_i(U_i) \subset \complexnumbers$ e $\varphi_j \circ \varphi_i^{-1}$ é holomorfa, quando $U_i \cap U_j \neq \emptyset$.
+\end{defi}
+
+\begin{teo}[Existência de parâmetros isotermos]
+	Considere uma superfície de Riemann $(M, \innerproduct{}{})$. Então, para qualquer $p \in M$, existe uma carta local $(U,\varphi)$ em $M$, com $p \in U$ e $\varphi \sim (x,y)$, e uma função diferenciável $\rho: U \rightarrow \realnumbers$ tais que:
+	\begin{gather*}
+		\innerproduct{\pdiff{x}}{\pdiff{x}} = \innerproduct{\pdiff{y}}{\pdiff{y}} = e^{\rho(x,y)}\\
+		\innerproduct{\pdiff{x}}{\pdiff{y}} = 0
+	\end{gather*}
+\end{teo}
+
+\begin{teo}
+	Seja $M$ uma superfície Riemanniana orientada e considere um atlas $\mathcal{A} = \{ (U_p,\varphi_p): p \in M \}$ de modo que cada carta $(U_p,\varphi_p)$ é isoterma e orientada positiva. Então, as mudanças de coordenadas são holomorfas, logo $M$ é uma superfície de Riemann.
+\end{teo}
+
+\begin{prop}
+	Seja $f: M \rightarrow \complexnumbers$ uma função diferenciável. Então $f$ é holomorfa se e somente se $\partialdifffrac{f}{z} = 0$ para toda carta local $(U,\varphi)$ em $M$.
+\end{prop}

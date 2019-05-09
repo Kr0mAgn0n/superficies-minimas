@@ -3,7 +3,14 @@
 \begin{defi}
 	Seja $M^n$ uma variedade suave. Um \emph{campo vetorial} é uma aplicação diferenciável $X: M \rightarrow TM$ tal que $\pi \circ X = \text{Id}_M$.
 	
-	diagrama
+\begin{figure}
+	\centering
+	\begin{tikzcd}
+	M \arrow{rd}[swap]{\text{id}} \arrow{r}{X} & TM \arrow{d}{\pi} \\
+	& M
+	\end{tikzcd}
+	\caption{Diagrama comutativo de um campo vetorial}
+\end{figure}
 	
 	onde $\pi: TM \rightarrow M$ denota a projeção canônica
 	\begin{equation*}
@@ -30,7 +37,7 @@
 \end{obse}
 
 \begin{obse}
-	Dados $X \in \mathfrak{X}(M)$ e uma carta local $(U, \varphi$ em $M$, podemos escrever
+	Dados $X \in \mathfrak{X}(M)$ e uma carta local $(U, \varphi)$ em $M$, podemos escrever
 	\begin{align*}
 		X(p) = \sum_{i=1}^n a_i (p) \frac{\partial}{\partial x_i} (p), \forall p \in U
 	\end{align*}
@@ -43,4 +50,4 @@
 	onde $\{ e_1, \ldots, e_n \}$ é a base canônica de $\mathbb{R}^n$.
 \end{obse}
 
-Ver que $X \in \mathfrak{X}(M$ é diferenciável se e somente se os $a_1, \ldots, a_n$ são diferenciáveis em U.
+Ver que $X \in \mathfrak{X}(M)$ é diferenciável se e somente se os $a_1, \ldots, a_n$ são diferenciáveis em U.
