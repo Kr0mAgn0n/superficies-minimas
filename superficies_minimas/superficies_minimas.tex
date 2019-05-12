@@ -1,0 +1,72 @@
+\section{Superfícies Mínimas}
+
+\begin{defi}
+	Uma superfície regular $M$ em $\realnumbers^3$ é chamada \emph{superfície mínimas} se $H(p)=0$ para qualquer $p \in M$.
+\end{defi}
+
+\begin{obse}
+	Se $H \equiv 0$, então $K_1 + K_2 \equiv 0$. Logo $K_1 = -K_2$
+\end{obse}
+
+\begin{exemplo}
+	Um plano em $\realnumbers^3$ é trivialmente mínima, pois $K_1=K_2=0$.
+\end{exemplo}
+
+A motivação histórica do estudo das superfícies mínimas foi dada por Lagrange o ano 1760 como seguinte problema:
+
+Dado uma curva fechada $\gamma$ em $\realnumbers^3$, sem autointerseções, determinar a superfície de área mínima, e que tem $\gamma$ como fronteira.
+
+Seja $M$ uma superfície regular orientada em $\realnumbers^3$, e considere uma função $f \in \smoothfunction{M}$.
+
+\begin{defi}
+	Uma \emph{variação normal} de $M$, relativa à função $f$, é uma família de superfícies $M_t$, com $t \in (-\epsilon,\epsilon)$, dadas por:
+	\begin{equation*}
+		p_t = p + t f(p) N(p),
+	\end{equation*}
+	
+	onde $N$ é o campo unitário normal a $M$, na orientação de $M$.
+	
+\end{defi}
+
+Para $\epsilon > 0$ suficientemente pequeno, cada conjunto $M_t$ também e uma superfície regular chamada uma \emph{superfície de variação}.
+
+Note que para $t=0$, $M_0=M$. Se $f \equiv 1$, $M_t$ é uma superfície \emph{paralela} a $M$ a uma distancia $t$.
+
+**gráfico**
+
+Dados uma variação normal $M_t$ de $M$ relativa a uma função suave $f: M \rightarrow \realnumbers$, com $t \in (-\epsilon,\epsilon)$, e $D \subset M$ um domínio limitado, considere
+\begin{equation*}
+	D_t = \{ p_t \in M_t: p \in D \}
+\end{equation*}
+
+para cada $t \in (-\epsilon,\epsilon)$, $D_t$ é um domínio correspondente em $M_t$. Definimos em cada $t$
+\begin{equation*}
+	A(t) = \text{Area}(D_t)
+\end{equation*}
+
+\begin{teo}
+	\begin{equation*}
+		A'(0) = -2 \int_D Hf dA
+	\end{equation*}
+\end{teo}
+
+A expressão acima chama-se a \emph{formula da primeira variação da área}.
+
+\begin{proof}
+	contenidos...
+\end{proof}
+
+\begin{prop}
+	Uma superfície $M$ em $\realnumbers^3$ é mínima se e somente se $A'(0) = 0$.
+\end{prop}
+
+\begin{proof}
+	contenidos...
+\end{proof}
+
+\begin{obse}
+	Suponha que exista uma solução $M$ para o problema de Lagrange, e considere uma variação normal $M_t$ de $M$, com $t \in (-\epsilon,\epsilon)$, dada por uma função suave $f: M \rightarrow \realnumbers$ tal que $f_{|\partial M} = 0$. Como a área de $M$ é mínima temos, em particular, que
+	\begin{equation*}
+		A(t) \geq A(0)
+	\end{equation*}
+\end{obse}
