@@ -56,7 +56,7 @@ A expressão acima chama-se a \emph{formula da primeira variação da área}.
 	contenidos...
 \end{proof}
 
-\begin{prop}
+\begin{prop}\label{caracteristica_das_superficies_minimas}
 	Uma superfície $M$ em $\realnumbers^3$ é mínima se e somente se $A'(0) = 0$.
 \end{prop}
 
@@ -69,4 +69,157 @@ A expressão acima chama-se a \emph{formula da primeira variação da área}.
 	\begin{equation*}
 		A(t) \geq A(0)
 	\end{equation*}
+	
+	para qualquer $t \in (-\epsilon,\epsilon)$. Portanto, $A'(0)=0$, para toda variação normal $M_t$ de $M$ com $f_{|\partial M}=0$.
+	
+	Isso mostra, em virtude da proposição \ref{caracteristica_das_superficies_minimas}, que as superfícies de área minima são superfícies minimas no sentido da nossa definição. A reciproca é falsa!
 \end{obse}
+
+\begin{prop}
+	Não existe superfície minima compacta em $\realnumbers^3$.
+\end{prop}
+
+\begin{proof}
+	Se $M$ é minima, então
+	\begin{equation*}
+		H = \frac{1}{2} (k_1 + k_2) = 0.
+	\end{equation*}
+	
+	Logo $k_1 = -k_2$ e se tem que $K = k_1 k_2 \leq 0$.
+	
+	Se $M$ for compacta, existe $p \in M$ tal que $K(p) > 0$.
+\end{proof}
+
+Dada suma superfície regular $M$ em $\realnumbers^3$, considere uma carta local isoterma $(U,\varphi)$ para $M$, i.e., 
+\begin{equation*}
+	E = G = \lambda^2 \text{ e } F=0,
+\end{equation*}
+
+onde $\lambda: U \rightarrow \realnumbers$ é uma função diferenciável com $\lambda > 0$. Note que, nas coordenadas isotermas $\varphi \sim (x,y)$, a curvatura media se expressa como
+\begin{align*}
+	H &= \frac{eG - 2fF + gE}{2(EG - F^2)}\\
+	&= \frac{e + g}{2 \lambda^2}
+\end{align*}
+
+\begin{defi}
+	Dado uma função diferenciável $f: U \subset \realnumbers^2 \rightarrow \realnumbers$, o \emph{Laplaciano} de $f$, denotado por $\Delta f$, é definido por
+	\begin{equation*}
+		\Delta f = \frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2}.
+	\end{equation*}
+	
+	Dizemos que $f$ é \emph{harmônica} se $\Delta f = 0$.
+	
+	Se $(U, \varphi)$ é uma carta local para $M$ como $\varphi = (\varphi_1, \varphi_2, \varphi_3)$, definimos
+	\begin{equation*}
+		\Delta \varphi = (\Delta \varphi_1, \Delta \varphi_2, \Delta \varphi_3).
+	\end{equation*}
+\end{defi}
+
+\begin{prop}
+	Se $(U, \varphi)$ é uma carta local isoterma em $M$, então 
+	\begin{equation*}
+		\Delta \varphi = 2 \lambda^2 H N
+	\end{equation*}
+\end{prop}
+
+\begin{proof}
+	Como $\varphi$ é isoterma, com $\varphi \sim (u, v)$, temos
+	\begin{gather*}
+		\innerproduct{\varphi_u}{\varphi_v} = \lambda^2 = \innerproduct{\varphi_v}{\varphi_u} \\
+		\text{ e } \innerproduct{\varphi_u}{\varphi_v} = 0
+	\end{gather*}
+	
+	Derivando, obtemos:
+	\begin{align*}
+		\innerproduct{\varphi_{uu}}{\varphi_u} &= \innerproduct{\varphi_{vu}}{\varphi_v}\\
+		&= - \innerproduct{\varphi_u}{\varphi_{vv}}
+	\end{align*}
+	
+	Disso decorre que
+	\begin{equation}\label{eq1}
+		\innerproduct{\varphi_{uu} + \varphi_{vv}}{\varphi_u} = 0
+	\end{equation}
+	
+	Analogamente, obtemos:
+	\begin{equation}\label{eq2}
+		\innerproduct{\varphi_{uu} + \varphi_{vv}}{\varphi_v} = 0
+	\end{equation}
+	
+	De \ref{eq1} e \ref{eq2} concluímos que $\varphi_{uu} + \varphi_{vv}$ é paralela a $N$. Alem disso, como
+	\begin{equation}
+		H = \frac{e+g}{2 \lambda^2}
+	\end{equation}
+	
+	obtemos:
+	\begin{align*}
+		2 \lambda^2 H &= e + g = \innerproduct{\varphi_{uu}}{N} + \innerproduct{\varphi_{vv}}{N}\\
+		&= \innerproduct{\varphi_{uu} + \varphi_{vv}}{N}.
+	\end{align*}
+	
+	Isso mostra que
+	\begin{equation}
+		\Delta \varphi = 2 \lambda^2 H N
+	\end{equation}
+\end{proof}
+
+\begin{corolario}
+	Uma superfície $M$ em $\realnumbers^3$ é minima se e somente se toda carta local isoterma é harmônica.
+\end{corolario}
+
+\begin{exemplo}
+	O \emph{catenoide} é a superfície em $\realnumbers^3$ gerada pela rotação da catenária 
+	\begin{equation*}
+		y = a \cosh \left( \frac{z}{a} \right)
+	\end{equation*}
+	
+	em torno ao eixo $z$.
+	
+	(Gráfico)
+	
+	Assim, o catenoide pode ser parametrizado por
+	\begin{equation*}
+		\varphi(u,v) = \left( a \cosh v \cos u, a \cosh v \sin u, av \right)
+	\end{equation*}
+	
+	onde $u \in (0, 2 \pi)$ e $v \in \realnumbers$. Para tal $\varphi$, obtemos
+	\begin{gather*}
+		E = G = a^2 \cosh^2 v,\\
+		F = 0,\\
+		\varphi_{uu} + \varphi_{vv} = 0.
+	\end{gather*}
+	
+	Portanto o catenoide e uma superfície minima.
+\end{exemplo}
+
+\begin{exemplo}
+	Considere uma hélice dada por
+	\begin{equation*}
+		\alpha(u) = \left( \cos u, \sin u, au \right).
+	\end{equation*}
+	
+	Por cada ponto da hélice, trace uma reta paralela ao plano $XY$ que intercepta o eixo $Z$.
+	
+	(Gráfico)
+	
+	A superfície gerada por tais retas é o \emph{helicoide} e pode ser parametrizada por
+	\begin{equation*}
+		\varphi(u,v) = \left( v \cos u, v \sin u, au \right)
+	\end{equation*}
+	
+	com $u \in (0, 2 \pi)$ e $v \in \realnumbers$. Temos
+	\begin{gather*}
+		E = G = a^2 \cosh^2 v\\
+		F = 0\\
+		\varphi_{uu} + \varphi_{vv} = 0.
+	\end{gather*}
+	
+	Portanto o helicoide é superfície minima.
+\end{exemplo}
+
+\begin{teo}
+	Alem do plano,
+	\begin{enumerate}[(1)]
+		\item O catenoide é a única superfície rotacional minima.
+		\item O helicoide é a única superfície regrada minima.
+	\end{enumerate}
+\end{teo}
