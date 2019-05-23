@@ -1,4 +1,4 @@
-\section{Variedades suaves}
+\section{Superfícies regulares e variedades suaves}
 
 \begin{defi}
 Um subconjunto $M \subset \mathbb{R}^3$ é chamado de \emph{superfície regular} se para qualquer $p \in M$ existe um aberto $V$ de $\mathbb{R}^3$ e uma aplicação $\varphi: U \rightarrow M \cap V$ chamada de \emph{parametrização}, onde $U$ e um aberto de $\mathbb{R}^2$, tal que
@@ -56,7 +56,7 @@ Neste caso $M$ admite uma parametrização global. Defina $\varphi: U \rightarro
 \end{exemplo}
 
 \begin{defi}
-Seja $\phi: V \subset \mathbb{R}^m \rightarrow \mathbb{R}^n$ uma aplicação diferenciável. Um ponto $p \in V$ é chamado de \emph{ponto crítico} de $\phi$ se $d\phi(p)$ não é sobrejetora. Um ponto $q \in \mathbb{R}^n$ é chamado de \emph{valor crítico} de $\phi$ se existe algum ponto crítico de $\phi$ em $\phi^{-1}(q)$. Um ponto $q \in \mathbb{R}^n$ que não é valor crítico é chamado \emph{valor regular} para $\phi$.
+Seja $\phi: V \subset \mathbb{R}^m \rightarrow \mathbb{R}^n$ uma aplicação diferenciável. Um ponto $p \in V$ é chamado de \emph{ponto crítico} de $\phi$ se $d\phi(p)$ \emph{não} é sobrejetora. Um ponto $q \in \mathbb{R}^n$ é chamado de \emph{valor crítico} de $\phi$ se existe algum ponto crítico de $\phi$ em $\phi^{-1}(q)$. Um ponto $q \in \mathbb{R}^n$ que não é valor crítico é chamado \emph{valor regular} para $\phi$.
 \end{defi}
 
 \begin{obse}
@@ -91,11 +91,14 @@ Disso decorre, pelo teorema \ref{preimagem_de_um_valor_regular}, que a esfera $S
 \end{exemplo}
 
 \begin{exemplo}
-Seja $S^2 \subset \mathbb{R}^3$ a esfera unitária. Denote por $N$ seu polo norte, $N = (0,0,1)$
+Seja $S^2 \subset \mathbb{R}^3$ a esfera unitária. Denote por $N$ seu polo norte, $N = (0,0,1)$ (ver figura \ref{projecao_estereografica}).
 
 \begin{figure}
+
 	\centering
 	\includegraphics[scale=0.5]{graficos/projecao_estereografica.eps}
+	\caption{Projeção estereográfica}
+	\label{projecao_estereografica}
 \end{figure}
 
 Denote por $\pi_N$ a aplicação que associa a cada ponto $x \in S^2 \setminus \{N\}$ o ponto $\pi_N(x)$ no plano $x_3 = 0$, obtido pela interseção da semirreta que inicia no ponto $N$ e passa pelo ponto $x$ como o plano $x_3 = 0$. Os pontos da semirreta são da forma
@@ -169,8 +172,12 @@ Analogamente, podemos considerar $\pi_S$, onde $S=(0,0,-1)$.
 \end{defi}
 
 \begin{lema}
-	Seja $\mathcal{A}$ um atlas em $M$. Se $(U, \varphi)$ e $(V, \psi)$ sao duas cartas locais em $M$, ambas compatíveis com $\mathcal{A}$, então $\varphi$ e $\psi$ são compatíveis.
+	Seja $\mathcal{A}$ um atlas em $M$. Se $(U, \varphi)$ e $(V, \psi)$ sao duas cartas locais em $M$, ambas compatíveis com $\mathcal{A}$, então ambas são compatíveis.
 \end{lema}
+
+\begin{proof}
+	Se $U \cap V = \emptyset$, então as duas cartas são compatíveis. Supor que $U \cap V \neq \emptyset$, então existe $p \in U \cap V$. Como $\mathcal{A}$ é um atlas, então existe uma carta $(W, \rho) \in \mathcal{A}$ tal que $p \in W$. Pela hipótese, temos que $\varphi$ e $\psi$ são compatíveis com $\rho$, i.e., em $U \cap V \cap W$ temos que $\varphi \circ \rho^{-1}$ e $\rho \circ \psi^{-1}$ são difeomorfismos de classe $C^{\infty}$. Logo, $\varphi \circ \psi^{-1}$ é um difeomorfismo de classe $C^{\infty}$. Por tanto, $\varphi$ e $\psi$ são compatíveis. 
+\end{proof}
 
 \begin{defi}
 	Um atlas $\mathcal{A}$ em $M$ é dito \emph{maximal} se nao está propriamente contido em nenhum atlas de $M$.
@@ -180,12 +187,18 @@ Analogamente, podemos considerar $\pi_S$, onde $S=(0,0,-1)$.
 	Dado um atlas $\mathcal{A}$ em $M$, existe um único atlas maximal $\mathcal{A}_{\text{max}}$ em $M$, com $\mathcal{A} \subset \mathcal{A_{\text{max}}}$.
 \end{lema}
 
+\begin{proof}
+	Definamos $\mathcal{A}_{\text{max}}$ como o conjunto de todas as cartas compatíveis com $\mathcal{A}$. É claro que $\mathcal{A} \subset \mathcal{A_{\text{max}}}$. Para provar que $\mathcal{A_{\text{max}}}$ é um atlas peguemos $(U, \varphi)$ e $(V, \psi)$ duas cartas de $\mathcal{A_{\text{max}}}$. Pela definição de $\mathcal{A_{\text{max}}}$, temos que ambas cartas são compatíveis e portanto $\mathcal{A_{\text{max}}}$ é um atlas.
+	
+	Para provar que $\mathcal{A_{\text{max}}}$ é único vamos a pegar o atlas $\mathcal{B}$ tal que $\mathcal{A_{\text{max}}} \subset \mathcal{B}$. Como $\mathcal{A} \subset \mathcal{B}$, toda carta $(W, \rho) \in \mathcal{B}$ é compatível com $\mathcal{A}$, i.e., $\mathcal{B} \subset \mathcal{A_{\text{max}}}$. Portanto $\mathcal{A_{\text{max}}} = \mathcal{B}$.
+\end{proof}
+
 \begin{lema}
 	Dado um atlas $\mathcal{A} = \{ (U_{\alpha}, \varphi_{\alpha}): \alpha \in I \}$ em $M$, existe uma única topologia $\tau_{\mathcal{A}}$ em $M$ que torna cada $U_{\alpha}$ aberto em $M$ e cada carta $\varphi_{\alpha}$ um homeomorfismo, i.e., $\tau_{\mathcal{A}}$ é a \emph{topologia induzida pelo atlas $\mathcal{A}$}.
 \end{lema}
 
 \begin{defi}
-	Uma \emph{variedade suave} de dimensão $n$ é um par $(M, \mathcal{A})$, onde $M$ é um conjunto e $\mathcal{A}$ é um atlas maximal de dimensão $n$ e classe $C^{\infty}$ em $M$ tal que a topologia induzida $\tau_{\mathcal{A}}$ seja de Hausdorff e satisfaça o segundo axioma da enumerabilidades.
+	Uma \emph{variedade suave} de dimensão $n$ é um par $(M, \mathcal{A})$, onde $M$ é um conjunto e $\mathcal{A}$ é um atlas maximal de dimensão $n$ em $M$ tal que a topologia induzida $\tau_{\mathcal{A}}$ seja de Hausdorff e satisfaça o segundo axioma da enumerabilidade.
 \end{defi}
 
 \begin{figure}
@@ -194,7 +207,7 @@ Analogamente, podemos considerar $\pi_S$, onde $S=(0,0,-1)$.
 	\caption{Descrição gráfica de cartas compatíveis}
 \end{figure}
 
-Sejam $M^2$ uma superfície, $p \in M^2$ e $(U, \varphi)$ carta local em $M^2$, $p \in U$. Como $\varphi(U)$ é aberto de $\mathbb{R}^2$, podemos expressar $\varphi$ como
+Sejam $M$ uma superfície, $p \in M$ e $(U, \varphi)$ carta local em $M$ tal que $p \in U$. Como $\varphi(U)$ é aberto de $\mathbb{R}^2$, podemos expressar $\varphi$ como
 \begin{equation*}
 	\varphi(p) = (x(p), y(p)), \forall p \in U
 \end{equation*}
