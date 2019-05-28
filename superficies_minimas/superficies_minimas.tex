@@ -223,3 +223,104 @@ onde $\lambda: U \rightarrow \realnumbers$ é uma função diferenciável com $\
 		\item O helicoide é a única superfície regrada minima.
 	\end{enumerate}
 \end{teo}
+
+\begin{exemplo}
+	Dado uma função diferenciável $f: U \rightarrow \realnumbers$, definida num aberto $U \subset \realnumbers^2$, considere o gráfico $\text{Gr}(f)$ de $f$, parametrizado por
+	\begin{equation*}
+		\varphi(x,y) = (x,y,f(x,y)), (x,y) \in U.
+	\end{equation*}
+	
+	Temos
+	\begin{align*}
+		\varphi_x &= (1,0,f_x)\\
+		\varphi_y &= (0,1,f_y).
+	\end{align*}
+	
+	Assim
+	\begin{align*}
+		E &= \innerproduct{\varphi_x}{\varphi_x} = 1 + f_x^2\\
+		F &= \innerproduct{\varphi_x}{\varphi_y} = f_x f_y\\
+		G &= \innerproduct{\varphi_y}{\varphi_y} = 1 + f_y^2.
+	\end{align*}
+	
+	Un campo $n$, normal a $\text{Gr}(f)$, é dado por
+	\begin{align*}
+		n = \varphi_x \times \varphi_y &= \det \left[ \begin{matrix}
+		i & j & k\\
+		1 & 0 & f_x\\
+		0 & 1 & f_y
+		\end{matrix} \right]\\
+		&= (-f_x, -f_y, 1).
+	\end{align*}
+	
+	Normalizando, temos
+	\begin{equation*}
+		N = \frac{n}{\norm{n}} = \frac{1}{\sqrt{1 + f_x^2 + f_y^2}}(-f_x, -f_y, 1).
+	\end{equation*}
+	
+	Como
+	\begin{align*}
+		\varphi_{xx} &= (0, 0, f_{xx})\\
+		\varphi_{xy} &= (0, 0, f_{xy})\\
+		\varphi_{yy} &= (0, 0, f_{yy})
+	\end{align*}
+	
+	obtemos
+	\begin{align*}
+		e &= \innerproduct{\varphi_{xx}}{N} = \frac{f_{xx}}{\sqrt{1 + f_x^2 + f_y^2}}\\
+		f &= \innerproduct{\varphi_{xy}}{N} = \frac{f_{xy}}{\sqrt{1 + f_x^2 + f_y^2}}\\
+		g &= \innerproduct{\varphi_{yy}}{N} = \frac{f_{yy}}{\sqrt{1 + f_x^2 + f_y^2}}.
+	\end{align*}
+	
+	Assim, como
+	\begin{equation*}
+		H = \frac{eG - 2fF + gE}{2(EG - F^2)}
+	\end{equation*}
+	
+	segue que se $H \equiv 0$, temos
+	\begin{equation}\label{edp_superficies_minimas}
+		(1 + f_y^2) f_{xx}  - 2 f_x f_y f_{xy} + (1+f_x^2) f_{yy} = 0
+	\end{equation}
+	
+	que é uma EDP de 2da ordem.
+	
+	Um exemplo trivial da equação \ref{edp_superficies_minimas} é a função linear
+	\begin{equation*}
+		f(x,y) = ax + by + c,
+	\end{equation*}
+	
+	como $a, b, c \in \realnumbers$.
+\end{exemplo}
+
+\begin{exemplo}[Superfície de Scherk]
+	Suponha que
+	\begin{equation*}
+		f(x,y) = g(x) + h(y).
+	\end{equation*}
+	
+	Neste caso, a equação \ref{edp_superficies_minimas} pode ser escrita como
+	\begin{equation*}
+		(1 + (h')^2(y)) g''(x) + (1 + (g')^2(x)) h''(y) = 0,
+	\end{equation*}
+	
+	ou seja
+	\begin{equation*}
+		\frac{g''(x)}{1 + (g')^2(x)} + \frac{h''(y)}{1 + (h')^2(y)} = 0.
+	\end{equation*}
+	
+	Isso implica
+	\begin{equation*}
+		\frac{g''(x)}{1 + (g')^2(x)} = - \frac{h''(y)}{1 + (h')^2(y)} = \text{constante}.
+	\end{equation*}
+	
+	Integrando, obtemos (a menos de constantes) que
+	\begin{align*}
+		g(x) &= \ln (\cos x)\\
+		h(y) &= -\ln (\cos y).
+	\end{align*}
+	
+	A menos de dilatações e translações uma parte da superfície pode ser representada pelo gráfico da função
+	\begin{equation*}
+		\ln \left( \frac{\cos x}{\cos y} \right), 0 < x,y < \frac{\pi}{2}
+	\end{equation*}
+\end{exemplo}
