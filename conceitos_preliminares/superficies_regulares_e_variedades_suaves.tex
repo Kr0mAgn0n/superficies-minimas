@@ -197,6 +197,17 @@ Analogamente, podemos considerar $\pi_S$, onde $S=(0,0,-1)$.
 	Dado um atlas $\mathcal{A} = \{ (U_{\alpha}, \varphi_{\alpha}): \alpha \in I \}$ em $M$, existe uma única topologia $\tau_{\mathcal{A}}$ em $M$ que torna cada $U_{\alpha}$ aberto em $M$ e cada carta $\varphi_{\alpha}$ um homeomorfismo, i.e., $\tau_{\mathcal{A}}$ é a \emph{topologia induzida pelo atlas $\mathcal{A}$}.
 \end{lema}
 
+\begin{proof}
+	Seja $\mathcal{B} = \{ \varphi_{\alpha}^{-1}(V): \alpha \in I, V \text{ aberto de } \realnumbers^n \}$. $\mathcal{B}$ é a base de uma topologia. Em efeito, para qualquer $x \in M$ temos que $x \in U_{\alpha}$ para algum $\alpha \in I$ onde temos que $U_{\alpha} \in \mathcal{B}$. Logo, seja $x \in \varphi_{\alpha}^{-1}(V) \cap \varphi_{\beta}^{-1}(W)$ onde $V, W$ são abertos de $\realnumbers^n$. Para provar que $\mathcal{B}$ é a base de uma topologia basta com provar que $\varphi_{\alpha}^{-1}(V) \cap \varphi_{\beta}^{-1}(W) \in \mathcal{B}$. Podemos ver que
+	\begin{equation*}
+		\varphi_{\alpha}^{-1}(V) \cap \varphi_{\beta}^{-1}(W) = \varphi_{\alpha}^{-1} \left( V \cap (\varphi_{\beta} \circ \varphi_{\alpha}^{-1})^{-1}(W) \right).
+	\end{equation*}
+	
+	Pela compatibilidade de $\varphi_{\beta} \circ \varphi_{\alpha}^{-1}$ temos que $V \cap (\varphi_{\beta} \circ \varphi_{\alpha}^{-1})^{-1}(W)$ é aberto em $\realnumbers^n$. Portanto, $\varphi_{\alpha}^{-1}(V) \cap \varphi_{\beta}^{-1}(W) \in \mathcal{B}$.
+	
+	Definimos $\tau_{\mathcal{A}}$ como a topologia gerada por $\mathcal{B}$ e temos que a unicidade e imediata.
+\end{proof}
+
 \begin{defi}
 	Uma \emph{variedade suave} de dimensão $n$ é um par $(M, \mathcal{A})$, onde $M$ é um conjunto e $\mathcal{A}$ é um atlas maximal de dimensão $n$ em $M$ tal que a topologia induzida $\tau_{\mathcal{A}}$ seja de Hausdorff e satisfaça o segundo axioma da enumerabilidade.
 \end{defi}
@@ -206,6 +217,8 @@ Analogamente, podemos considerar $\pi_S$, onde $S=(0,0,-1)$.
 	\includegraphics[scale=0.5]{graficos/cartas_compativeis.eps}
 	\caption{Descrição gráfica de cartas compatíveis}
 \end{figure}
+
+No resto da seção vamos supor que as variedades são de dimensão 2. Isto é uma restrição para facilitar o estudo do tema principal deste dissertação. O caso geral onde a dimensão é major pode ser completada de jeito natural.
 
 Sejam $M$ uma superfície, $p \in M$ e $(U, \varphi)$ carta local em $M$ tal que $p \in U$. Como $\varphi(U)$ é aberto de $\mathbb{R}^2$, podemos expressar $\varphi$ como
 \begin{equation*}
@@ -224,7 +237,7 @@ As funções $x(p), y(p)$ são chamadas \emph{funções coordenadas} de $\varphi
 		\left\{ \frac{\partial}{\partial x} (p), \frac{\partial}{\partial y} (p) \right\}
 	\end{equation*}
 	
-	onde $\frac{\partial}{\partial x}, \frac{\partial}{\partial y}$ são derivadas parciais de $\varphi$ em relação às coordenadas usuais de $\mathbb{R}^2$, i.e.
+	onde $\frac{\partial}{\partial x}, \frac{\partial}{\partial y}$ são derivadas parciais de $\varphi$ em relação às coordenadas usuais de $\mathbb{R}^2$, i.e.,
 	\begin{align*}
 		\frac{\partial}{\partial x} (p) = d \varphi^{-1} ( \varphi(p) ) e_1\\
 		\frac{\partial}{\partial y} (p) = d \varphi^{-1} ( \varphi(p) ) e_2
