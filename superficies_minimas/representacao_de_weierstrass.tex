@@ -1,0 +1,335 @@
+\section{A representação de Weierstrass}
+
+Considere o plano complexo $\complexnumbers$ identificado com $\realnumbers^2$
+\begin{equation*}
+	(x,y) \in \realnumbers^2 \mapsto x + iy \in \complexnumbers.
+\end{equation*}
+
+Uma função complexa $f: U \subset \complexnumbers \rightarrow \complexnumbers$ pode ser escrita na forma
+\begin{equation*}
+	f(u,v) = f_1(u,v) + i f_2(u,v)
+\end{equation*}
+
+onde $f_1, f_2: U \rightarrow \realnumbers$ são funções reais, denotadas por
+\begin{align*}
+	f_1 &= \Re(f)\\
+	f_2 &= \Im(f)
+\end{align*}
+
+tal que $\Re(f)$ é parte real da função $f$ e $\Im(f)$ é a parte imaginaria da função $f$.
+
+\begin{defi}
+	Uma função $f: U \subset \complexnumbers \rightarrow \complexnumbers$, definida no aberto $U$, é dita \emph{holomorfa} se $f_1, f_2$ possuem derivadas parciais continuas e satisfazem as equações de Cauchy-Riemann
+	\begin{align*}
+		\partialdifffrac{f_1}{u} &= \partialdifffrac{f_2}{v}\\
+		\partialdifffrac{f_1}{v} &= - \partialdifffrac{f_2}{u}
+	\end{align*}
+\end{defi}
+
+\begin{defi}
+	Uma carta local $(U, \varphi)$ em $M$ é dita \emph{mínima} se $H(p) = 0, \forall p \in \varphi(U)$.
+\end{defi}
+
+\begin{corolario}\label{equiv_isoterma_harmonica}
+	Seja $(U, \varphi)$ uma carta local isoterma de uma superfície $M \subset \realnumbers^3$. Então $(U, \varphi)$ é minima se e somente se $\varphi$ é harmônica, i.e., $\varphi_{uu} + \varphi_{vv} = 0$.
+\end{corolario}
+
+Dadas uma superfície $M \subset \realnumbers^3$ e uma carta local $(U, \varphi)$ em $M$, com
+\begin{equation*}
+	\varphi(u,v) = (x_1(u,v), x_2(u,v), x_3(u,v)),
+\end{equation*}
+
+considere as funções complexas $f_j: U \subset \complexnumbers \rightarrow \complexnumbers, 1 \leq j \leq 3,$ dadas por
+\begin{equation}\label{carta_isoterma_cauchy-riemann}
+	f_j = \partialdifffrac{x_j}{u} - i \partialdifffrac{x_j}{v}, 1 \leq j \leq 3
+\end{equation}
+
+\begin{lema}
+	Seja $(U, \varphi)$ uma carta local isoterma em $M$. Então, $\varphi$ é minima se e somente se cada $f_j$, definida em \ref{carta_isoterma_cauchy-riemann}, é holomorfa.
+\end{lema}
+
+\begin{proof}
+	Pelo corolário \ref{equiv_isoterma_harmonica}, temos que $\varphi$ é minima se e somente se $\varphi$ é harmônica, i.e., $\varphi_{uu} + \varphi_{vv} = 0$. Isso significa que
+	\begin{equation*}
+		\npartialdifffrac{x_j}{u}{2} + \npartialdifffrac{x_j}{v}{2} = 0, 1 \leq j \leq 3.
+	\end{equation*}
+	
+	Queremos provar que
+	\begin{align*}
+		\pdiff{u} \Re(f_j) &= \pdiff{v} \Im(f_j),\\
+		\pdiff{v} \Re(f_J) &= - \pdiff{u} \Im(f_j)
+	\end{align*}
+	
+	Assim
+	\begin{multline*}
+		\pdiff{u} \Re(f_J) = \pdiff{u} \partialdifffrac{x_j}{u} = \npartialdifffrac{x_j}{u}{2} = - \npartialdifffrac{x_j}{v}{2} = \pdiff{v} \left( - \partialdifffrac{x_j}{v} \right) = \pdiff{v} \Im(f_j)
+	\end{multline*}
+	
+	Isso prova a 1a equação de Cauchy-Riemann. Por outro lado, como a superfície é regular, vale
+	\begin{equation*}
+		\varphi_{uv} = \varphi_{vu},
+	\end{equation*}
+	
+	ou seja
+	\begin{equation*}
+		\frac{\partial^2 x_j}{\partial u \partial v} = \frac{\partial^2 x_j}{\partial v \partial u}.
+	\end{equation*}
+	
+	Assim
+	\begin{align*}
+		\pdiff{v} \Re(f_j) &= \pdiff{v} \partialdifffrac{x_j}{u} = \pdiff{u} \partialdifffrac{x_j}{v}\\
+		&= \pdiff{u} \left( - \Im(f_j) \right)\\
+		&= - \pdiff{u} \Im(f_j),
+	\end{align*}
+	
+	que é a 2a equação de Cauchy-Riemann.
+\end{proof}
+
+\begin{lema}\label{lema_fj_2}
+	Sejam $M \subset \realnumbers^3$ uma superfície minima e $(U, \varphi)$ uma carta local isoterma. Então, as funções holomorfas $f_j$, definidas em \ref{carta_isoterma_cauchy-riemann}, satisfazem
+	\begin{gather}\label{sum_fj_2}
+		f_1^2 + f_2^2 + f_3^2 = 0\\ \label{sum_norm_fj_2}
+		|f_1|^2 + |f_2|^2 + |f_3|^2 \neq 0
+	\end{gather}
+	
+	Reciprocamente, sejam $f_1, f_2, f_3$ funções holomorfas, definidas num aberto simplesmente conexo $U \subset \complexnumbers$, satisfazendo \ref{sum_fj_2} e \ref{sum_norm_fj_2}. Então, tais funções dão origem a uma carta local isoterma minima $(U, \varphi)$.
+\end{lema}
+
+\begin{proof}
+	Seja $(U, \varphi)$ a carta local isoterma em $M$. Então,
+	\begin{align*}
+		f_1^2 + f_2^2 + f_3^2 &= \sum_{j=1}^{3} \left[ \left( \partialdifffrac{x_j}{u} \right)^2 - \left( \partialdifffrac{x_j}{v} \right)^2 - 2i \partialdifffrac{x_j}{u} \partialdifffrac{x_j}{v} \right]\\
+		&= E - G - 2iF = 0,
+	\end{align*}
+	
+	pois $E=G$ e $F=0$. A equação \ref{sum_norm_fj_2} segue da regularidade de $\varphi$, pois $\varphi_u \neq 0$ e $\varphi_v \neq 0$.
+	
+	Reciprocamente, defina
+	\begin{equation}\label{carta_isoterma_eq_integral}
+		x_j(u,v) = \int_{\xi_0}^{\xi} f_j(z) dz, 1 \leq j \leq 3
+	\end{equation}
+	
+	com $\xi = (u,v) \in U$, para algum $\xi_0 \in U$ fixado. Note que cada $x_j$ está bem definida pois $U$ é simplesmente conexo e $f_j$ é holomorfa, o que nos dá uma função holomorfa definida em $U$, para o qual podemos aplicar as equações de Cauchy-Riemann, obtendo:
+	\begin{align*}
+		\frac{d}{d \xi} \int_{\xi_0}^{\xi} f_j &= \frac{d}{d \xi} \left[ \Re \int_{\xi_0}^{\xi} f_j + i \Im \int_{\xi_0}^{\xi} f_j \right]\\
+		&= \pdiff{u} \Re \int_{\xi_0}^{\xi} f_j + i \pdiff{u} \Im \int_{\xi_0}^{\xi} f_j\\
+		&= \pdiff{u} \Re \int_{\xi_0}^{\xi} f_j - i \pdiff{v} \Re \int_{\xi_0}^{\xi} f_j
+	\end{align*}
+	
+	de modo que a equação \ref{carta_isoterma_cauchy-riemann} é válida. Considere a aplicação $\varphi: U \rightarrow \realnumbers^3$, cujas funções coordenadas
+	\begin{equation*}
+		\varphi = (x_1,x_2,x_3)
+	\end{equation*}
+	
+	são dadas como em \ref{carta_isoterma_eq_integral}. De \ref{sum_fj_2} e \ref{sum_norm_fj_2} segue que $(U,\varphi)$ é uma carta local isoterma. Além disso, as funções $f_j$ serem holomorfas implicam que as funções coordenadas $x_j$ são harmônicas, logo, pelo corolário, $\varphi$ é minima.
+\end{proof}
+
+\begin{obse}
+	As funções $x_j$ definidas em \ref{carta_isoterma_eq_integral} estão definidas a menos de uma constante aditiva, de modo que a superfície está definida a menos de uma translação. Assim, o estudo local de superfícies minimas em $\realnumbers^3$ reduz-se a resolver as equações \ref{sum_fj_2} e \ref*{sum_norm_fj_2} para uma terna de funções holomorfas.
+\end{obse}
+
+\begin{teo}
+	Sejam $f: U \subset \complexnumbers \rightarrow \complexnumbers$ uma função holomorfa e $g: U \rightarrow \complexnumbers$ uma função meromorfa tais que $fg^2$ seja holomorfa. Assuma que se $\xi \in U$ é um polo de ordem $n$ para $g$ então $\xi$ é um zero para $f$ de ordem $2n$, e que estes sejam os únicos zeros de $f$.
+	
+	Então, a aplicação
+	\begin{equation}\label{carta_minima_duas_funcoes}
+		\varphi(z) = \frac{1}{2} f(z) \left( (1-g(z)^2), i (1+g(z)^2), 2g(z) \right)
+	\end{equation}
+	
+	satisfaz as condições do Lema \ref{lema_fj_2}. Além disso, para toda tal $\varphi$, existem funções holomorfa $f$ e meromorfa $g$ tais que vale \ref{carta_minima_duas_funcoes}.
+\end{teo}
+
+\begin{proof}
+	Se $\varphi$ satisfaz \ref{carta_minima_duas_funcoes}, temos
+	\begin{align*}
+		f_1^2 + f_2^2 + f_3^2 &= \frac{1}{4} f(z)^2 (1 - g(z)^2)^2 - \frac{1}{4} f(z)^2 (1 + g(z)^2)^2 + f(z)^2 g(z)^2\\
+		&= 0
+	\end{align*}
+	
+	Afirmamos que $\varphi(z) \neq 0, \forall z \in U$. De fato, a hipótese sobre os zeros de $f$ e os polos de $g$ implicam que $f(z) g(z)^2 \neq 0$. Assim, para qualquer $z$ fixado, a primeira e a segunda coordenada de $\varphi$ não podem ser ambas nulas.
+	
+	Assim, podemos assumir que $\varphi$ é holomorfa satisfazendo
+	\begin{equation*}
+		\varphi_1^2 + \varphi_2^2 + \varphi_3^2 \not\equiv 0,
+	\end{equation*}
+	
+	$\varphi$ nunca é zero, e considere
+	\begin{align*}
+		f(z) &= \varphi_1(z) - i \varphi_2(z)\\
+		g(z) &= \frac{\varphi_3(z)}{\varphi_1(z) - i \varphi_2(z)}
+	\end{align*}
+	
+	$f$ é uma função holomorfa e $g$ é o quociente de funções holomorfas. Se o denominador de $g$ é identicamente nulo, façamos
+	\begin{equation*}
+		g(z) = \frac{\varphi_3(z)}{\varphi_1(z) + i \varphi_2(z)}
+	\end{equation*}
+	
+	e proceder de forma similar.
+	
+	Assim, sendo o denominador de $g$ não nulo, tem-se que $g$ é meromorfa. Assim, a relação
+	\begin{equation*}
+		\varphi_1^2 + \varphi_2^2 + \varphi_3^2 = 0
+	\end{equation*}
+	
+	implica
+	\begin{equation*}
+		(\varphi_1 + i \varphi_2)(\varphi_1 - i \varphi_2) = -\varphi_3^2
+	\end{equation*}
+	
+	que, em termos de $f$ e $g$ torna-se
+	\begin{align*}
+		\varphi_1 + i \varphi_2 &= \frac{-\varphi_3^2}{\varphi_1 - i \varphi_2}\\
+		&= \frac{-\varphi_3^2}{(\varphi_1 - i \varphi_2)^2} (\varphi_1 - i \varphi_2)\\
+		&= -fg^2
+	\end{align*}
+	
+	Esta última equação, juntamente com as condições sobre $f$ e $g$, nos dão $\varphi$ como em \ref{carta_minima_duas_funcoes}.
+\end{proof}
+
+\begin{defi}
+	Sejam $U \subset \complexnumbers$ um aberto simplesmente conexo e $\gamma \subset U$ uma curva de um ponto fixado $z_0 \in U$ a um ponto arbitrário $z \in U$, $z = u + iv$.
+	
+	Sejam $f,g$ como no teorema anterior. Então,
+	\begin{equation*}
+		\varphi(u,v) = (x_1(u,v), x_2(u,v), x_3(u,v)),
+	\end{equation*}
+	
+	onde
+	\begin{align*}
+		x_1 &= \Re \int_{\gamma} \frac{1}{2} f(z) (1 - g(z)^2) dz\\
+		x_2 &= \Re \int_{\gamma} \frac{1}{2} f(z) (1 + g(z)^2) dz\\
+		x_3 &= \Re \int_{\gamma} f(z) g(z) dz
+	\end{align*}
+	
+	é uma carta local mínima, chamada \emph{a representação de Weierstrass} da teoria local de superfícies mínimas.
+\end{defi}
+
+\begin{exemplo}[Catenoide]
+	O catenoide pode ser representado pelas funções holomorfas $f, g: \complexnumbers \rightarrow \complexnumbers$ dadas por
+	\begin{align*}
+		f(z) &= e^{-z},\\
+		g(z) &= e^z.
+	\end{align*}
+	
+	Substituindo tais funções na formula da representação de Weierstrass e integrando de $z_0 = 0$ a um ponto arbitrário $z = u + iv$, obtemos
+	\begin{align*}
+		\varphi(u,v) &= x_0 + \Re \int_{z_0}^{z} \frac{f(\xi)}{2} (1 - g(\xi)^2, i (1 + g(\xi)^2), 2 g(\xi)) d\xi\\
+		&= x_0 + \Re \int_{z_0}^{z} \frac{e^{-\xi}}{2} (1 - e^{2\xi}, i (1 + e^{2\xi}), 2e^{\xi}) d\xi\\
+		&= \Re \int_{0}^{z} \frac{1}{2} (e^{-\xi} - e^{\xi}, i (e^{-\xi} + e^{\xi}), 1) d\xi\\
+		&= \Re \left[ \frac{1}{2} \left(-e^{-z} - e^z, -\frac{1}{2i} (-e^{-z} + e^z), z \right) \right] \\
+		&= \Re \left( -\cosh z, i \sinh z, z \right) \\
+		&= \left( -\cosh u \cos v, -\cosh u \sin v, u \right)
+	\end{align*} 
+\end{exemplo}
+
+\begin{exemplo}[Superfície de Enneper]
+	A superfície de Enneper pode ser representada pelas funções holomorfas $f,g: \complexnumbers \rightarrow \complexnumbers$ dadas por
+	\begin{align*}
+		f(z) &= 1, \\
+		g(z) &= z.
+	\end{align*}
+	
+	Assim, a representação de Weierstrass torna-se
+	\begin{align*}
+		\varphi(u,v) &= \Re \left( \frac{1}{2} \int_{0}^{z} \left( 1 - \xi^2, i (1 + \xi^2), 2\xi \right) \right) d\xi \\
+		&= \frac{1}{2} \Re \left( z - \frac{z^3}{3}, iz + \frac{iz^3}{3}, z^2 \right) \\
+		&= \frac{1}{2} \left( u - \frac{u^3}{3} + uv^2, -v + \frac{v^3}{3} - u^2v, u^2 - v^2 \right)
+	\end{align*}
+	
+	grafico
+\end{exemplo}
+
+\begin{exemplo}[Superficie de Scherk]
+	A superfície de Scherk, definida pela equação
+	\begin{equation*}
+		e^z = \frac{\cos y}{\cos x},
+	\end{equation*}
+	
+	pode ser representada pelas funções holomorfas $f: \complexnumbers \setminus \{\pm 1, \pm i \} \rightarrow \complexnumbers$ e $g: \complexnumbers \rightarrow \complexnumbers$ dadas por
+	\begin{align*}
+		f(z) &= \frac{2}{1 - z^4}, \\
+		g(z) &= z.
+	\end{align*}
+	
+	Note que
+	\begin{align*}
+		f (1 - g^2) &= \frac{2}{1 + z^2} = \frac{i}{z + i} - \frac{i}{z - i}, \\
+		i f (1 + g^2) &= \frac{2i}{1 - z^2} = \frac{i}{z + 1} - \frac{i}{z - 1}, \\
+		2fg &= \frac{4z}{1 - z^4} = \frac{2z}{z^2 + 1} - \frac{2z}{z^2 - 1}.
+	\end{align*}
+	
+	Assim, substituindo na representação de Weierstrass e integrando, obtemos
+	\begin{equation*}
+		\varphi(z) = \left( -\arg \frac{z + i}{z - i}, -\arg \frac{z + i}{z - i}, \log \left\| \frac{z^2 + 1}{z^2 - 1} \right\| \right).
+	\end{equation*}
+	
+	Usando as identidades
+	\begin{align*}
+		\frac{z + i}{z - i} &= \frac{|z|^2 - 1}{|z^2 - i|^2} + i \frac{z + \overline{z}}{|z - i|^2}, \\
+		\frac{z + 1}{z - 1} &= \frac{|z|^2 - 1}{|z - 1|^2} + i \frac{\overline{z} - z}{|z - 1|^2},
+	\end{align*}
+	
+	podemos encontrar as expressões para $\cos x$ e $\cos y$. Temos
+	\begin{align*}
+		\cos x &= \cos \left( -\arg \frac{z + i}{z - i} \right) \\
+		&= \cos \left( \arg \frac{z + i}{z - i} \right) \\
+		&= \cos \left( \arg \left( \frac{|z - i|}{|z + i|} \frac{z + i}{z - i} \right) \right) \\
+		&= \Re \left( \frac{|z - i|}{|z + i|} \frac{z + i}{z - i} \right) \\
+		&= \frac{|z - i|}{|z + i|} \Re \left( \frac{z + i}{z - i} \right) \\
+		&= \frac{|z - i|}{|z + i|} \frac{|z|^2 - 1}{|z - i|^2} = \frac{|z|^2 - 1}{|z^2 + 1|}.
+	\end{align*}
+	
+	Analogamente, temos
+	\begin{align*}
+		\cos y &= \cos \left( -\arg \frac{z + 1}{z - 1} \right) \\
+		&= \frac{|z - 1|}{|z + 1|} \frac{|z|^2 - i}{|z - 1|^2} \\
+		&= \frac{|z|^2 - i}{|z^2 - 1|}
+	\end{align*}
+	
+	Isso implica que
+	\begin{equation*}
+		\frac{\cos y}{\cos x} = \frac{z^2 + 1}{|z^2 - 1|} = e^z
+	\end{equation*}
+	
+	Vejamos uma aplicação da representação de Weierstrass. Dado uma superfície mínima $M \subset \realnumbers^3$, seja $(U, \varphi)$ uma carta local isoterma.
+	
+	Isso significa que
+	\begin{align*}
+		E = G &= \lambda^2, \\
+		F &= 0
+	\end{align*}
+	
+	onde
+	\begin{align*}
+		\lambda^2 &= \frac{1}{2} \sum_{j=1}^{3} |f_j|^2 \\
+		&= \frac{1}{4} |f|^2 |1 + g|^2 + \frac{1}{4} |f|^2 |1 + g|^2 + |fg|^2\\
+		&= \left( \frac{|f| (| + |g|^2)}{2} \right)^2
+	\end{align*} 
+	
+	Além disso, temos
+	\begin{align*}
+		\varphi_u \times \varphi_v &= \left( \Im (f_2 \overline{f}_3), \Im (f_3 \overline{f}_1), \Im (f_1 \overline{f}_2) \right) \\
+		&= \frac{|f|^2 (1 + |g|^2)}{4} \left( 2 \Re(g), 2 \Im(g), |g|^2 - | \right), \\
+		\| \varphi_u \times \varphi_v \| &= \sqrt{EG - F^2} = \lambda^2,
+	\end{align*}
+	
+	de modo que
+	\begin{equation*}
+		N = \left( \frac{2 \Re(g)}{|g|^2 + 1}, \frac{2 \Im(g)}{|g|^2 + 1}, \frac{|g|^2 - 1}{|g|^2 + 1} \right)
+	\end{equation*}
+	
+	Lembremos que a projeção estereográfica
+	\begin{equation*}
+		\pi: S^2 \setminus \{ (0,0,1) \} \rightarrow \complexnumbers
+	\end{equation*}
+	
+	é a aplicação
+	\begin{equation*}
+		\pi(x_1, x_2, x_3) = \frac{x_1 + ix_2}{1 - x_3},
+	\end{equation*}
+	
+	e uma inversa é dada por
+	\begin{equation*}
+		\pi^{-1}(z) = \left( pp \right)
+	\end{equation*}
+\end{exemplo}
