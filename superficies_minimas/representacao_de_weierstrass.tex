@@ -31,7 +31,7 @@ tal que $\Re(f)$ é parte real da função $f$ e $\Im(f)$ é a parte imaginaria 
 \end{defi}
 
 \begin{corolario}\label{equiv_isoterma_harmonica}
-	Seja $(U, \varphi)$ uma carta local isoterma de uma superfície $M \subset \realnumbers^3$. Então $(U, \varphi)$ é minima se e somente se $\varphi$ é harmônica, i.e., $\varphi_{uu} + \varphi_{vv} = 0$.
+	Seja $(U, \varphi)$ uma carta local isoterma de uma superfície $M \subset \realnumbers^3$. Então $(U, \varphi)$ é mínima se e somente se $\varphi$ é harmônica, i.e., $\varphi_{uu} + \varphi_{vv} = 0$.
 \end{corolario}
 
 Dadas uma superfície $M \subset \realnumbers^3$ e uma carta local $(U, \varphi)$ em $M$, com
@@ -45,11 +45,11 @@ considere as funções complexas $f_j: U \subset \complexnumbers \rightarrow \co
 \end{equation}
 
 \begin{lema}
-	Seja $(U, \varphi)$ uma carta local isoterma em $M$. Então, $\varphi$ é minima se e somente se cada $f_j$, definida em \ref{carta_isoterma_cauchy-riemann}, é holomorfa.
+	Seja $(U, \varphi)$ uma carta local isoterma em $M$. Então, $\varphi$ é mínima se e somente se cada $f_j$, definida em \ref{carta_isoterma_cauchy-riemann}, é holomorfa.
 \end{lema}
 
 \begin{proof}
-	Pelo corolário \ref{equiv_isoterma_harmonica}, temos que $\varphi$ é minima se e somente se $\varphi$ é harmônica, i.e., $\varphi_{uu} + \varphi_{vv} = 0$. Isso significa que
+	Pelo corolário \ref{equiv_isoterma_harmonica}, temos que $\varphi$ é mínima se e somente se $\varphi$ é harmônica, i.e., $\varphi_{uu} + \varphi_{vv} = 0$. Isso significa que
 	\begin{equation*}
 		\npartialdifffrac{x_j}{u}{2} + \npartialdifffrac{x_j}{v}{2} = 0, 1 \leq j \leq 3.
 	\end{equation*}
@@ -65,7 +65,7 @@ considere as funções complexas $f_j: U \subset \complexnumbers \rightarrow \co
 		\pdiff{u} \Re(f_J) = \pdiff{u} \partialdifffrac{x_j}{u} = \npartialdifffrac{x_j}{u}{2} = - \npartialdifffrac{x_j}{v}{2} = \pdiff{v} \left( - \partialdifffrac{x_j}{v} \right) = \pdiff{v} \Im(f_j)
 	\end{multline*}
 	
-	Isso prova a 1a equação de Cauchy-Riemann. Por outro lado, como a superfície é regular, vale
+	Isso prova a primeira equação de Cauchy-Riemann. Por outro lado, como a superfície é regular, vale
 	\begin{equation*}
 		\varphi_{uv} = \varphi_{vu},
 	\end{equation*}
@@ -82,17 +82,17 @@ considere as funções complexas $f_j: U \subset \complexnumbers \rightarrow \co
 		&= - \pdiff{u} \Im(f_j),
 	\end{align*}
 	
-	que é a 2a equação de Cauchy-Riemann.
+	que é a segunda equação de Cauchy-Riemann.
 \end{proof}
 
 \begin{lema}\label{lema_fj_2}
-	Sejam $M \subset \realnumbers^3$ uma superfície minima e $(U, \varphi)$ uma carta local isoterma. Então, as funções holomorfas $f_j$, definidas em \ref{carta_isoterma_cauchy-riemann}, satisfazem
+	Sejam $M \subset \realnumbers^3$ uma superfície mínima e $(U, \varphi)$ uma carta local isoterma. Então, as funções holomorfas $f_j$, definidas em \ref{carta_isoterma_cauchy-riemann}, satisfazem
 	\begin{gather}\label{sum_fj_2}
 		f_1^2 + f_2^2 + f_3^2 = 0\\ \label{sum_norm_fj_2}
 		|f_1|^2 + |f_2|^2 + |f_3|^2 \neq 0
 	\end{gather}
 	
-	Reciprocamente, sejam $f_1, f_2, f_3$ funções holomorfas, definidas num aberto simplesmente conexo $U \subset \complexnumbers$, satisfazendo \ref{sum_fj_2} e \ref{sum_norm_fj_2}. Então, tais funções dão origem a uma carta local isoterma minima $(U, \varphi)$.
+	Reciprocamente, sejam $f_1, f_2, f_3$ funções holomorfas, definidas num aberto simplesmente conexo $U \subset \complexnumbers$, satisfazendo \ref{sum_fj_2} e \ref{sum_norm_fj_2}. Então, tais funções dão origem a uma carta local isoterma mínima $(U, \varphi)$.
 \end{lema}
 
 \begin{proof}
@@ -121,11 +121,11 @@ considere as funções complexas $f_j: U \subset \complexnumbers \rightarrow \co
 		\varphi = (x_1,x_2,x_3)
 	\end{equation*}
 	
-	são dadas como em \ref{carta_isoterma_eq_integral}. De \ref{sum_fj_2} e \ref{sum_norm_fj_2} segue que $(U,\varphi)$ é uma carta local isoterma. Além disso, as funções $f_j$ serem holomorfas implicam que as funções coordenadas $x_j$ são harmônicas, logo, pelo corolário, $\varphi$ é minima.
+	são dadas como em \ref{carta_isoterma_eq_integral}. De \ref{sum_fj_2} e \ref{sum_norm_fj_2} segue que $(U,\varphi)$ é uma carta local isoterma. Além disso, as funções $f_j$ serem holomorfas implicam que as funções coordenadas $x_j$ são harmônicas, logo, pelo corolário, $\varphi$ é mínima.
 \end{proof}
 
 \begin{obse}
-	As funções $x_j$ definidas em \ref{carta_isoterma_eq_integral} estão definidas a menos de uma constante aditiva, de modo que a superfície está definida a menos de uma translação. Assim, o estudo local de superfícies minimas em $\realnumbers^3$ reduz-se a resolver as equações \ref{sum_fj_2} e \ref*{sum_norm_fj_2} para uma terna de funções holomorfas.
+	As funções $x_j$ definidas em \ref{carta_isoterma_eq_integral} estão definidas a menos de uma constante aditiva, de modo que a superfície está definida a menos de uma translação. Assim, o estudo local de superfícies mínimas em $\realnumbers^3$ reduz-se a resolver as equações \ref{sum_fj_2} e \ref*{sum_norm_fj_2} para uma terna de funções holomorfas.
 \end{obse}
 
 \begin{teo}
@@ -236,10 +236,10 @@ considere as funções complexas $f_j: U \subset \complexnumbers \rightarrow \co
 		&= \frac{1}{2} \left( u - \frac{u^3}{3} + uv^2, -v + \frac{v^3}{3} - u^2v, u^2 - v^2 \right)
 	\end{align*}
 	
-	grafico
+	gráfico
 \end{exemplo}
 
-\begin{exemplo}[Superficie de Scherk]
+\begin{exemplo}[Superfície de Scherk]
 	A superfície de Scherk, definida pela equação
 	\begin{equation*}
 		e^z = \frac{\cos y}{\cos x},
@@ -330,6 +330,71 @@ considere as funções complexas $f_j: U \subset \complexnumbers \rightarrow \co
 	
 	e uma inversa é dada por
 	\begin{equation*}
-		\pi^{-1}(z) = \left( pp \right)
+		\pi^{-1}(z) = \left( \frac{2 \Re(z)}{|z|^2 + 1}, \frac{2 \Im(z)}{|z|^2 + 1}, \frac{|z|^2 - 1}{|z|^2 + 1} \right)
 	\end{equation*}
+	
+	Portanto, temos que
+	\begin{equation*}
+		N = \pi^{-1} \circ g
+	\end{equation*}
+	
+	Podemos resumir isso no seguinte resultado.
 \end{exemplo}
+
+\begin{prop}
+	Sejam $M \subset \realnumbers^3$ uma superfície mínima e $(U, \varphi)$ uma carta local isoterma. Então, um dos campos unitários $N$, normal a $M$ é a inversa da projeção estereográfica da função $g$ dada pela representação de Weierstrass.
+\end{prop}
+
+\begin{corolario}
+	Seja $M \subset \realnumbers^3$ uma superfície mínima definida no plano todo. Então, ou $M$ é um plano ou a imagem da aplicação de Gauss omite pelo menos dois pontos.
+\end{corolario}
+
+\begin{proof}
+	Se $M$ não está contida num plano, podemos construir a função $g$ que é meromorfa no plano todo $\complexnumbers$. Pelo teorema de Picard, ela atinge todos seus valores com, pelo menos, duas excepções, ou $g$ é constante. A equação (referencia) mostra que o mesmo se aplica a $N$ e, no último caso, $M$ está contida em um plano.
+\end{proof}
+
+\begin{teo}[Existência local de parâmetros isotermos]
+	Seja $M \subset \realnumbers^3$ uma superfície mínima. Então, todo $p \in M$ pertence a uma vizinhança coordenada isoterma.
+\end{teo}
+
+\begin{proof}
+	Seja $U \subset M$ uma vizinhança coordenada de $p$ que é o gráfico de uma função diferenciável que, podemos assumir, ser da forma $z = h(x,y), (x,y) \in U$.
+	
+	Lembrando que a equação para gráficos mínimos e
+	\begin{equation*}
+		(1 + h_y^2) h_{xx} - 2 h_x h_y h_{xy} + (1 + h_x^2) h_{yy} = 0,
+	\end{equation*}
+	
+	obtemos a equação
+	\begin{equation*}
+		\pdiff{x} \frac{1 + h_y^2}{W} = \pdiff{y} \frac{h_x h_y}{W}
+	\end{equation*}
+	
+	em $U$, onde $W = \sqrt{1 + h_x^2 + h_y^2}$. Escolhendo $U$ simplesmente conexo, isso implica que existe uma função diferenciável $\phi: U \rightarrow \realnumbers$, com
+	\begin{align*}
+		\partialdifffrac{\phi}{x} &= \frac{h_x h_y}{W} \\
+		\partialdifffrac{\phi}{y} &= \frac{1 + h_y^2}{W}
+	\end{align*}
+	
+	Introduza novas coordenadas
+	\begin{align*}
+		\overline{x} &= x \\
+		\overline{y} &= \phi(x,y)
+	\end{align*}
+	
+	Um calculo simples mostra que
+	\begin{align*}
+		\partialdifffrac{x}{\overline{x}} &= 1, \\
+		\partialdifffrac{x}{\overline{y}} &= 0, \\
+		\partialdifffrac{y}{\overline{x}} &= -\frac{h_x h_y}{1 + h_y^2}, \\
+		\partialdifffrac{y}{\overline{y}} &= \frac{W}{1 + h_y^2},
+	\end{align*}
+	
+	e os coeficientes da Segunda Forma Fundamental, em relação a $(\overline{x}, \overline{y})$ são
+	\begin{align*}
+		E = G &= \frac{W^2}{1 + h_y^2} \\
+		F &= 0
+	\end{align*}
+	
+	como queríamos.
+\end{proof}
